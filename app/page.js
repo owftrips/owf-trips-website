@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Script from "next/script";
 import HeroVideo from "./components/HeroVideo";
 
 const upcomingTrips = [
@@ -8,9 +9,10 @@ const upcomingTrips = [
     name: "Meghalaya Road Trip",
     url: "https://www.owftrips.in/magical-meghalaya-trip",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/IMG_3775.JPG",
-    price: "₹22,499/- Onwards",
+    price: "₹22,499/-",
+    priceSuffix: "Onwards",
     duration: "6N/7D",
-    pickup: "Guwahati",
+    pickup: "Guwahati - Guwahati",
     batches: "22 Feb, 1 Mar",
     alt: "Meghalaya road trip waterfall view",
   },
@@ -19,9 +21,10 @@ const upcomingTrips = [
     url: "https://www.owftrips.in/winter-spiti-backpacking",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/f/f5/Kee_monastery_Spiti_Valley_%28edited%29.jpg",
-    price: "₹22,500/- Onwards",
+    price: "₹22,500/-",
+    priceSuffix: "Onwards",
     duration: "6N/7D",
-    pickup: "Delhi",
+    pickup: "Delhi - Delhi",
     batches: "1 Mar, 7 Mar +3 batches",
     alt: "Winter Spiti Backpacking Trip",
   },
@@ -55,10 +58,94 @@ const leaders = [
   },
 ];
 
+const galleryFrames = [
+  {
+    place: "Frame 1",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/39376+2.jpg",
+  },
+  {
+    place: "Frame 2",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/4D0D6292-B81F-46A2-991B-3E8881C5C4D0.JPG",
+  },
+  {
+    place: "Frame 3",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/6ABA0C34-12BA-4EE6-A932-9D36A120D3D0.JPG",
+  },
+  {
+    place: "Frame 4",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_1290_HEIC+2.jpg",
+  },
+  {
+    place: "Frame 5",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_1361.jpg",
+  },
+  {
+    place: "Frame 6",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_20191101_174143.jpg",
+  },
+  {
+    place: "Frame 7",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_2402+3.jpg",
+  },
+  {
+    place: "Frame 8",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_2464+2.jpg",
+  },
+  {
+    place: "Frame 9",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_2894_HEIC.jpg",
+  },
+  {
+    place: "Frame 10",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_3470.JPG",
+  },
+  {
+    place: "Frame 11",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_3618.JPG",
+  },
+  {
+    place: "Frame 12",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_3739.jpg",
+  },
+  {
+    place: "Frame 13",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_3775.JPG",
+  },
+  {
+    place: "Frame 14",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_3884+2.JPG",
+  },
+  {
+    place: "Frame 15",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_6121.jpg",
+  },
+  {
+    place: "Frame 16",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_6654_HEIC+3.jpg",
+  },
+  {
+    place: "Frame 17",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_7239+2.jpg",
+  },
+  {
+    place: "Frame 18",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_8531+2.jpg",
+  },
+  {
+    place: "Frame 19",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_9987+2.jpg",
+  },
+  {
+    place: "Frame 20",
+    image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/PHOTO-2025-06-28-09-15-52.jpg",
+  },
+];
+
 export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activePopupId, setActivePopupId] = useState("");
   const tripsRef = useRef(null);
+  const galleryRef = useRef(null);
 
   useEffect(() => {
     const revealEls = document.querySelectorAll(".reveal");
@@ -97,6 +184,11 @@ export default function HomePage() {
     tripsRef.current.scrollBy({ left: distance, behavior: "smooth" });
   };
 
+  const scrollGallery = (distance) => {
+    if (!galleryRef.current) return;
+    galleryRef.current.scrollBy({ left: distance, behavior: "smooth" });
+  };
+
   const year = new Date().getFullYear();
 
   return (
@@ -116,7 +208,6 @@ export default function HomePage() {
           </button>
           <nav id="site-nav" className={`nav-links ${menuOpen ? "open" : ""}`} aria-label="Main navigation">
             <a href="#group-trips" onClick={() => setMenuOpen(false)}>Group Trips</a>
-            <a href="#destinations" onClick={() => setMenuOpen(false)}>Destinations</a>
             <a href="#trip-leaders" onClick={() => setMenuOpen(false)}>Trip Leaders</a>
             <a href="#reviews" onClick={() => setMenuOpen(false)}>Reviews</a>
             <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
@@ -131,8 +222,8 @@ export default function HomePage() {
         <section id="group-trips" className="section">
           <div className="container">
             <div className="section-head reveal">
-              <p className="eyebrow">Our Group Trips</p>
-              <h2>Join like-minded travelers on fixed departures.</h2>
+              <h2 className="group-trips-heading">Upcoming Group Trips</h2>
+              <p className="group-trips-subheading">Join like-minded travelers on fixed departures.</p>
             </div>
             <div className="trip-scroll-wrap reveal">
               <button className="scroll-arrow left-arrow" aria-label="Scroll trips left" onClick={() => scrollTrips(-320)}>
@@ -142,7 +233,10 @@ export default function HomePage() {
                 {upcomingTrips.map((trip) => (
                   <a key={trip.name} className="upcoming-trip-card" href={trip.url} target="_blank" rel="noopener noreferrer">
                     <img src={trip.image} alt={trip.alt} loading="lazy" />
-                    <span className="trip-price">{trip.price}</span>
+                    <span className="trip-price">
+                      <span className="trip-price-value">{trip.price}</span>{" "}
+                      <span className="trip-price-suffix">{trip.priceSuffix}</span>
+                    </span>
                     <div className="trip-overlay">
                       <h3>{trip.name}</h3>
                       <p className="trip-meta">
@@ -161,32 +255,9 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="destinations" className="section section-alt">
-          <div className="container">
-            <div className="section-head reveal">
-              <p className="eyebrow">Top Destinations</p>
-              <h2>Popular routes travelers keep coming back to.</h2>
-            </div>
-            <div className="destination-grid">
-              <article className="destination reveal">
-                <h3>Himachal Pradesh</h3>
-                <p>Spiti, Kasol, and mountain circuit journeys across changing seasons.</p>
-              </article>
-              <article className="destination reveal">
-                <h3>Meghalaya</h3>
-                <p>Green valleys, cave systems, and immersive northeast travel experiences.</p>
-              </article>
-              <article className="destination reveal">
-                <h3>Kashmir</h3>
-                <p>Lake stays, local culture, and scenic alpine drives through the valley.</p>
-              </article>
-              <article className="destination reveal">
-                <h3>Custom India Trips</h3>
-                <p>Tell us your dates and budget, and we design a personalized route for you.</p>
-              </article>
-            </div>
-          </div>
-        </section>
+        <div className="container section-divider-wrap">
+          <hr className="section-divider" aria-hidden="true" />
+        </div>
 
         <section id="why-us" className="section">
           <div className="container why-grid">
@@ -206,8 +277,8 @@ export default function HomePage() {
         <section id="trip-leaders" className="section section-alt">
           <div className="container">
             <div className="section-head reveal">
-              <p className="eyebrow">OWF Trip Leaders</p>
-              <h2>Get To Know India's Coolest Trip Leaders!</h2>
+              <h2 className="trip-leaders-heading">OWF Trip Leaders</h2>
+              <p className="trip-leaders-subheading">Get To Know India's Coolest Trip Leaders!</p>
             </div>
             <div className="leaders-scroll reveal" aria-label="OWF Trip leaders">
               {leaders.map((leader) => (
@@ -239,22 +310,85 @@ export default function HomePage() {
         <section id="reviews" className="section section-alt">
           <div className="container">
             <div className="section-head reveal">
-              <p className="eyebrow">Customer Reviews</p>
-              <h2>Real feedback from previous travelers.</h2>
+              <h2 className="reviews-heading">Reviews</h2>
+              <p className="reviews-subheading">from our Trippers to Us ❤️</p>
             </div>
-            <div className="review-grid">
-              <blockquote className="review reveal">
-                "Itinerary was smooth and the team support was prompt before and during the trip."
-                <cite>- Group Traveler, Spiti</cite>
-              </blockquote>
-              <blockquote className="review reveal">
-                "Great coordination and transparent communication throughout the booking process."
-                <cite>- Couple Traveler, Kashmir</cite>
-              </blockquote>
-              <blockquote className="review reveal">
-                "Loved the Meghalaya route and local experiences we usually miss in regular plans."
-                <cite>- Solo Traveler, Meghalaya</cite>
-              </blockquote>
+            <div className="review-widget reveal">
+              <Script
+                src="https://static.elfsight.com/platform/platform.js"
+                data-use-service-core
+                strategy="lazyOnload"
+              />
+              <div
+                className="elfsight-app-b26481d2-715b-46ab-b5a9-d7549301d918"
+                data-elfsight-app-lazy
+              ></div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section connect-experts-section">
+          <div className="container">
+            <div className="connect-experts-card reveal">
+              <div className="connect-experts-overlay"></div>
+              <div className="connect-experts-content">
+                <h2>Didn&apos;t find what you were looking for?</h2>
+                <p>Connect with our experts! Get the best itineraries and offers!</p>
+                <a
+                  className="connect-experts-btn"
+                  href="https://wa.me/message/ZLIG4WNMOLF2P1"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Connect now
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section frames-section">
+          <div className="container">
+            <div className="section-head reveal frames-head">
+              <h2 className="frames-heading">WANDERLUST IN FRAME</h2>
+              <p className="frames-subheading">Picture-Perfect Journeys</p>
+            </div>
+            <div className="frames-carousel reveal">
+              <button
+                className="frames-arrow frames-arrow-left"
+                type="button"
+                aria-label="Scroll gallery left"
+                onClick={() => scrollGallery(-360)}
+              >
+                <i className="fas fa-chevron-left" aria-hidden="true"></i>
+              </button>
+
+              <div className="frames-track" ref={galleryRef} aria-label="Trip photo gallery">
+                {galleryFrames.map((frame, index) => {
+                  const mod = index % galleryFrames.length;
+                  const cardClass =
+                    mod === 0
+                      ? "frame-card frame-card-left"
+                      : mod === galleryFrames.length - 1
+                        ? "frame-card frame-card-right"
+                        : "frame-card";
+
+                  return (
+                    <article key={`${frame.place}-${index}`} className={cardClass}>
+                      <img src={frame.image} alt={`${frame.place} trip photo`} loading="lazy" />
+                    </article>
+                  );
+                })}
+              </div>
+
+              <button
+                className="frames-arrow frames-arrow-right"
+                type="button"
+                aria-label="Scroll gallery right"
+                onClick={() => scrollGallery(360)}
+              >
+                <i className="fas fa-chevron-right" aria-hidden="true"></i>
+              </button>
             </div>
           </div>
         </section>

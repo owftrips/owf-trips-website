@@ -1,14 +1,14 @@
 :root {
-  --bg: #f7f3ec;
-  --surface: #fffdfa;
-  --text: #1f1c18;
-  --muted: #645a4d;
-  --line: #e5d8c7;
-  --brand: #cd4f22;
-  --brand-deep: #a53b16;
-  --sky: #dce7f5;
-  --sand: #f6dcbc;
-  --shadow: 0 18px 40px rgb(75 40 21 / 12%);
+  --bg: #f4f8ff;
+  --surface: #ffffff;
+  --text: #10233d;
+  --muted: #4b607f;
+  --line: #d6e4f5;
+  --brand: #1f6feb;
+  --brand-deep: #134ea8;
+  --sky: #eaf3ff;
+  --sand: #dbeaff;
+  --shadow: 0 18px 40px rgb(19 78 168 / 14%);
 }
 
 * {
@@ -41,7 +41,7 @@ body {
 }
 
 .section-alt {
-  background: rgb(255 255 255 / 72%);
+  background: rgb(248 252 255 / 78%);
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -51,7 +51,7 @@ body {
   top: 0;
   z-index: 20;
   backdrop-filter: blur(12px);
-  background: rgb(247 243 236 / 88%);
+  background: rgb(255 255 255 / 90%);
   border-bottom: 1px solid var(--line);
 }
 
@@ -163,36 +163,56 @@ h3 {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
-  background: #eef3f5;
-  padding: 0.8rem 0.8rem;
+  gap: 2.2rem;
+  background: #eaf2ff;
+  padding: 0.7rem 1rem;
   border-radius: 0 0 16px 16px;
 }
 
 .hero-rating-item {
   display: inline-flex;
-  gap: 0.45rem;
+  gap: 0.62rem;
   align-items: center;
+  color: inherit;
+  text-decoration: none;
+  min-height: 54px;
+  padding: 0.24rem 0.38rem;
+  border-radius: 10px;
+  transition: background-color 0.2s ease;
+}
+
+.hero-rating-item:hover {
+  background: rgb(255 255 255 / 70%);
 }
 
 .hero-rating-icon {
-  width: 2rem;
-  height: 2rem;
+  width: 2.9rem;
+  height: 2.9rem;
   flex: 0 0 auto;
+  display: block;
+}
+
+.hero-rating-item-tripadvisor .hero-rating-icon {
+  width: 3.05rem;
+  height: 1.8rem;
+  object-fit: contain;
 }
 
 .hero-rating-score {
   margin: 0;
-  color: #363636;
-  font-size: 0.92rem;
-  font-weight: 700;
+  color: #1f2022;
+  font-size: 1.35rem;
+  line-height: 1;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
 }
 
-.hero-rating-reviews {
-  margin: 0;
-  color: #48535c;
-  font-size: 0.88rem;
-  font-weight: 600;
+.hero-rating-star {
+  color: #f4a300;
+  font-size: 0.74rem;
+  transform: translateY(-8px);
 }
 
 .contact-actions {
@@ -204,6 +224,86 @@ h3 {
 
 .section-head {
   margin-bottom: 1.2rem;
+}
+
+.section-divider-wrap {
+  margin: 0.8rem auto 0.4rem;
+}
+
+.section-divider {
+  margin: 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+  opacity: 0.9;
+}
+
+.group-trips-heading {
+  box-sizing: border-box;
+  color: rgb(45 45 45);
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 600;
+  height: auto;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+  unicode-bidi: isolate;
+  width: fit-content;
+}
+
+.group-trips-subheading {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+  font-weight: 400;
+}
+
+.trip-leaders-heading {
+  box-sizing: border-box;
+  color: rgb(45 45 45);
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 600;
+  height: auto;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+  unicode-bidi: isolate;
+  width: fit-content;
+}
+
+.trip-leaders-subheading {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+  font-weight: 400;
+}
+
+.reviews-heading {
+  box-sizing: border-box;
+  color: rgb(45 45 45);
+  display: block;
+  font-family: "Roboto", sans-serif;
+  font-size: 34px;
+  font-style: normal;
+  font-weight: 600;
+  height: auto;
+  line-height: normal;
+  margin: 0;
+  padding: 0;
+  unicode-bidi: isolate;
+  width: fit-content;
+}
+
+.reviews-subheading {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(0.95rem, 1.5vw, 1.08rem);
+  font-weight: 400;
 }
 
 .destination-grid,
@@ -218,6 +318,166 @@ h3 {
 
 .review-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.review-widget {
+  min-height: 120px;
+}
+
+.frames-section {
+  background: #f0f3f8;
+}
+
+.frames-head {
+  text-align: center;
+  margin-bottom: 1.7rem;
+}
+
+.frames-heading {
+  margin: 0;
+  font-family: "Outfit", sans-serif;
+  font-size: clamp(1.5rem, 2.15vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: #1b2a42;
+  width: 100%;
+}
+
+.frames-subheading {
+  margin: 0.45rem 0 0;
+  font-size: clamp(1rem, 1.32vw, 1.3rem);
+  color: #5a6b84;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.frames-carousel {
+  position: relative;
+}
+
+.frames-track {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.frames-track::-webkit-scrollbar {
+  display: none;
+}
+
+.frame-card {
+  position: relative;
+  flex: 0 0 24%;
+  min-width: 250px;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+}
+
+.frame-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.frame-card-left {
+  border-top-left-radius: 100% 16px;
+  border-bottom-left-radius: 100% 16px;
+}
+
+.frame-card-right {
+  border-top-right-radius: 100% 16px;
+  border-bottom-right-radius: 100% 16px;
+}
+
+.frames-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 0;
+  background: #11b0ce;
+  color: #fff;
+  font-size: 1.55rem;
+  cursor: pointer;
+  z-index: 3;
+  box-shadow: 0 8px 20px rgb(8 93 125 / 30%);
+}
+
+.frames-arrow-left {
+  left: -22px;
+}
+
+.frames-arrow-right {
+  right: -22px;
+}
+
+.connect-experts-section {
+  padding-top: 1.6rem;
+}
+
+.connect-experts-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 18px;
+  min-height: 360px;
+  background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80");
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 16px 34px rgb(6 24 56 / 18%);
+}
+
+.connect-experts-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgb(2 20 45 / 78%) 0%, rgb(2 20 45 / 60%) 44%, rgb(2 20 45 / 26%) 72%, rgb(2 20 45 / 12%) 100%);
+}
+
+.connect-experts-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  padding: 3rem 2.6rem;
+  max-width: 560px;
+}
+
+.connect-experts-content h2 {
+  margin: 0 0 0.8rem;
+  color: #fff;
+  font-size: clamp(1.45rem, 2.5vw, 2.15rem);
+  font-family: "Outfit", sans-serif;
+  font-weight: 600;
+  line-height: 1.18;
+}
+
+.connect-experts-content p {
+  margin: 0;
+  color: #eef4ff;
+  font-size: clamp(0.95rem, 1.15vw, 1.08rem);
+  font-weight: 400;
+  line-height: 1.55;
+}
+
+.connect-experts-btn {
+  margin-top: 1.65rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 170px;
+  padding: 0.68rem 1.1rem;
+  border-radius: 12px;
+  background: #fee60d;
+  color: #111;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  box-shadow: 0 8px 22px rgb(0 0 0 / 28%);
 }
 
 .destination,
@@ -243,16 +503,21 @@ h3 {
 
 .trip-scroll-wrap {
   position: relative;
+  width: 100%;
+  overflow: hidden;
 }
 
 .trip-scroll-container {
   display: flex;
-  gap: 1rem;
+  gap: 20px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
-  scroll-padding-left: 0.2rem;
-  padding: 0.2rem;
+  -webkit-overflow-scrolling: touch;
+  position: relative;
+  white-space: nowrap;
+  scroll-padding-left: 10px;
+  padding: 10px;
 }
 
 .trip-scroll-container::-webkit-scrollbar {
@@ -261,19 +526,24 @@ h3 {
 
 .trip-scroll-container::-webkit-scrollbar-thumb {
   border-radius: 999px;
-  background: #d8c5af;
+  background: #b9d0ef;
 }
 
 .upcoming-trip-card {
   position: relative;
-  flex: 0 0 min(350px, 84vw);
+  width: 100%;
+  max-width: 350px;
+  display: inline-block;
+  flex: 0 0 auto;
   aspect-ratio: 4 / 5;
-  border-radius: 12px;
+  border-radius: 10px;
   overflow: hidden;
   scroll-snap-align: start;
-  box-shadow: var(--shadow);
+  box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
   color: #fff;
+  font-family: "Roboto", sans-serif;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .upcoming-trip-card img {
@@ -292,13 +562,22 @@ h3 {
   top: 10px;
   right: 10px;
   z-index: 2;
-  background: #ffe45c;
-  color: #241300;
+  background: #fee60d;
+  color: #000;
   border-radius: 999px;
   border: 2px solid #fff;
-  padding: 0.28rem 0.7rem;
-  font-size: 0.78rem;
-  font-weight: 800;
+  padding: 5px 10px;
+  font-size: 12px;
+  font-weight: 400;
+  box-shadow: 0 6px 18px rgb(0 0 0 / 24%);
+}
+
+.trip-price-value {
+  font-weight: 700;
+}
+
+.trip-price-suffix {
+  font-weight: 400;
 }
 
 .trip-overlay {
@@ -307,26 +586,46 @@ h3 {
   left: 0;
   right: 0;
   z-index: 1;
-  padding: 1rem 0.9rem;
-  background: linear-gradient(to top, rgb(0 0 0 / 88%), rgb(0 0 0 / 62%), transparent);
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: linear-gradient(
+    to top,
+    rgb(0 0 0 / 98%) 0%,
+    rgb(0 0 0 / 92%) 48%,
+    rgb(0 0 0 / 72%) 72%,
+    rgb(0 0 0 / 0%) 100%
+  );
 }
 
 .trip-overlay h3 {
-  margin: 0 0 0.35rem;
+  margin: 0 0 5px;
+  padding: 4px;
   color: #fff;
-  font-size: 0.98rem;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: left;
+  font-weight: 500;
+  text-shadow: 0 2px 6px rgb(0 0 0 / 70%);
 }
 
 .trip-meta,
 .trip-batch {
-  margin: 0.2rem 0;
-  color: #ebebeb;
-  font-size: 0.88rem;
+  margin: 5px 0;
+  color: #fff;
+  font-size: 14px;
+  text-align: left;
+  text-shadow: 0 1px 2px rgb(0 0 0 / 65%);
+  font-weight: 500;
 }
 
 .trip-meta {
   display: flex;
-  gap: 0.8rem;
+  width: 100%;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0;
 }
 
 .trip-meta span,
@@ -336,6 +635,17 @@ h3 {
   gap: 0.32rem;
 }
 
+.trip-meta i,
+.trip-batch i {
+  color: #22c7ff;
+  font-size: 0.9em;
+}
+
+.trip-batch {
+  color: #fff;
+  margin-top: 5px;
+}
+
 .scroll-arrow {
   position: absolute;
   top: 50%;
@@ -343,21 +653,22 @@ h3 {
   z-index: 3;
   border: 0;
   border-radius: 50%;
-  width: 38px;
-  height: 38px;
+  width: 40px;
+  height: 40px;
   display: grid;
   place-items: center;
   color: #fff;
-  background: rgb(35 24 16 / 70%);
+  background: rgb(0 0 0 / 50%);
   cursor: pointer;
+  font-size: 18px;
 }
 
 .left-arrow {
-  left: 0.35rem;
+  left: 5px;
 }
 
 .right-arrow {
-  right: 0.35rem;
+  right: 5px;
 }
 
 .why-grid {
@@ -382,7 +693,7 @@ h3 {
 
 .leaders-scroll::-webkit-scrollbar-thumb {
   border-radius: 999px;
-  background: #d8c5af;
+  background: #b9d0ef;
 }
 
 .leader-card {
@@ -394,7 +705,7 @@ h3 {
   text-align: center;
   scroll-snap-align: start;
   cursor: pointer;
-  border: 1px solid #eee3d4;
+  border: 1px solid #dce8f7;
 }
 
 .leader-card:focus-visible {
@@ -417,7 +728,7 @@ h3 {
 
 .leader-info p {
   margin: 0.2rem 0;
-  color: #4d4338;
+  color: #4b607f;
 }
 
 .leader-btn {
@@ -425,7 +736,7 @@ h3 {
   margin-top: 0.55rem;
   font-size: 0.76rem;
   font-weight: 700;
-  color: #4d4338;
+  color: #3c577d;
 }
 
 .popup-overlay {
@@ -455,7 +766,7 @@ h3 {
 }
 
 .leader-popup p {
-  color: #443a30;
+  color: #4b607f;
   font-size: 0.94rem;
 }
 
@@ -578,6 +889,8 @@ h3 {
   .trip-meta {
     flex-direction: column;
     gap: 0.2rem;
+    justify-content: flex-start;
+    margin-bottom: 6px;
   }
 
   .leaders-scroll {
@@ -586,6 +899,18 @@ h3 {
 }
 
 @media (max-width: 760px) {
+  .group-trips-heading {
+    font-size: 20px;
+  }
+
+  .trip-leaders-heading {
+    font-size: 20px;
+  }
+
+  .reviews-heading {
+    font-size: 20px;
+  }
+
   .hero-video-section {
     width: 100%;
     margin-top: 0;
@@ -604,8 +929,21 @@ h3 {
   }
 
   .hero-rating-icon {
-    width: 1.65rem;
-    height: 1.65rem;
+    width: 2.15rem;
+    height: 2.15rem;
+  }
+
+  .hero-rating-item-tripadvisor .hero-rating-icon {
+    width: 2.25rem;
+    height: 1.35rem;
+  }
+
+  .hero-rating-score {
+    font-size: 1.2rem;
+  }
+
+  .hero-rating-star {
+    transform: translateY(-6px);
   }
 
   .menu-toggle {
@@ -621,9 +959,9 @@ h3 {
     flex-direction: column;
     gap: 0.1rem;
     padding: 0.8rem 4%;
-    background: rgb(247 243 236 / 96%);
+    background: rgb(255 255 255 / 96%);
     border-bottom: 1px solid var(--line);
-    box-shadow: 0 12px 24px rgb(35 24 16 / 10%);
+    box-shadow: 0 12px 24px rgb(19 78 168 / 10%);
   }
 
   .nav-links.open {
@@ -644,6 +982,11 @@ h3 {
     flex-basis: 88vw;
   }
 
+  .trip-price {
+    font-size: 12px;
+    padding: 5px 10px;
+  }
+
   .leader-card {
     flex-basis: 84vw;
   }
@@ -653,12 +996,76 @@ h3 {
     padding: 1rem;
   }
 
+  .connect-experts-section {
+    padding-top: 1.1rem;
+  }
+
+  .connect-experts-card {
+    min-height: 280px;
+    border-radius: 14px;
+    background-position: 62% center;
+  }
+
+  .connect-experts-overlay {
+    background: linear-gradient(180deg, rgb(2 20 45 / 70%) 0%, rgb(2 20 45 / 66%) 55%, rgb(2 20 45 / 44%) 100%);
+  }
+
+  .connect-experts-content {
+    max-width: 100%;
+    padding: 1.5rem 1.2rem 1.6rem;
+  }
+
+  .connect-experts-content p {
+    font-size: 0.95rem;
+    font-weight: 400;
+  }
+
+  .connect-experts-btn {
+    margin-top: 1.3rem;
+    min-width: 150px;
+    font-size: 0.95rem;
+    padding: 0.66rem 0.95rem;
+    border-radius: 12px;
+  }
+
+  .frames-carousel {
+    padding: 0 0.2rem;
+  }
+
+  .frame-card {
+    flex-basis: 72vw;
+    min-width: 72vw;
+    aspect-ratio: 4 / 5;
+    border-radius: 14px;
+  }
+
+  .frame-card-left,
+  .frame-card-right {
+    border-radius: 14px;
+  }
+
+  .frames-arrow {
+    display: none;
+  }
+
   .scroll-arrow {
     display: none;
   }
 }
 
 @media (max-width: 480px) {
+  .group-trips-heading {
+    font-size: 18px;
+  }
+
+  .trip-leaders-heading {
+    font-size: 18px;
+  }
+
+  .reviews-heading {
+    font-size: 18px;
+  }
+
   .container {
     width: 94%;
   }
@@ -667,9 +1074,13 @@ h3 {
     padding: 3rem 0;
   }
 
+  .section-divider-wrap {
+    margin: 0.5rem auto 0.2rem;
+  }
+
   .hero-rating-strip {
     gap: 0.7rem;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   .hero-rating-item {
@@ -677,16 +1088,17 @@ h3 {
   }
 
   .hero-rating-icon {
-    width: 1.35rem;
-    height: 1.35rem;
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+
+  .hero-rating-item-tripadvisor .hero-rating-icon {
+    width: 2rem;
+    height: 1.2rem;
   }
 
   .hero-rating-score {
-    font-size: 0.82rem;
-  }
-
-  .hero-rating-reviews {
-    font-size: 0.76rem;
+    font-size: 1.05rem;
   }
 
   .upcoming-trip-card {
@@ -704,6 +1116,33 @@ h3 {
   }
 
   .leader-popup p {
+    font-size: 0.9rem;
+  }
+
+  .connect-experts-card {
+    min-height: 250px;
+  }
+
+  .connect-experts-content h2 {
+    font-size: 1.26rem;
+  }
+
+  .connect-experts-content p {
+    font-size: 0.9rem;
+  }
+
+  .connect-experts-btn {
+    min-width: 140px;
+    font-size: 0.9rem;
+  }
+
+  .frame-card {
+    flex-basis: 82vw;
+    min-width: 82vw;
+    aspect-ratio: 4 / 5;
+  }
+
+  .frames-subheading {
     font-size: 0.9rem;
   }
 }

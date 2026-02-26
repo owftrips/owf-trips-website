@@ -3,91 +3,185 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>OWF Trips | Explore Better</title>
-  <meta name="description" content="OWF Trips helps travelers discover curated trips, transparent pricing, and easy planning." />
+  <title>OWF Trips | Explore India Better</title>
+  <meta name="description" content="OWF Trips offers curated group departures and custom trips across India with transparent planning and on-ground support." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@500;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Outfit:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="brand" href="#">OWF Trips</a>
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="#trips">Trips</a>
-        <a href="#why-us">Why Us</a>
-        <a href="#contact">Contact</a>
+      <a class="brand" href="#home">OWF Trips</a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-nav">Menu</button>
+      <nav id="site-nav" class="nav-links" aria-label="Main navigation">
+        <a href="#group-trips">Group Trips</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="nav-cta">Plan My Trip</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
+  <main id="home">
+    <section class="hero section">
       <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Small groups, real experiences</p>
-          <h1>Plan your next trip without the chaos.</h1>
-          <p class="hero-copy">Discover curated destinations, clear itineraries, and a team that handles every detail before you travel.</p>
+        <div class="reveal">
+          <p class="eyebrow">Welcome to OWF Trips</p>
+          <h1>Travel better with curated trips and stress-free planning.</h1>
+          <p class="hero-copy">
+            One Way Fly brings you group departures and personalized trips across India.
+            We focus on smart itineraries, transparent costs, and support from planning to return.
+          </p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#trips">View Trips</a>
-            <a class="btn btn-secondary" href="#contact">Get Help</a>
+            <a class="btn btn-primary" href="#group-trips">Explore Group Trips</a>
+            <a class="btn btn-secondary" href="#contact">Talk to Us</a>
           </div>
+          <ul class="hero-points">
+            <li>Curated departures</li>
+            <li>Custom itineraries</li>
+            <li>Reliable support</li>
+          </ul>
         </div>
-        <div class="hero-panel" aria-hidden="true">
-          <p>2026 Spring Window</p>
-          <h2>Spiti, Meghalaya, Kashmir</h2>
-          <p>Upcoming departures with limited seats.</p>
-        </div>
+        <aside class="hero-panel reveal" aria-label="Upcoming group trips highlight">
+          <p class="panel-kicker">June - July 2026</p>
+          <h2>Next Departures</h2>
+          <ul>
+            <li><strong>Meghalaya</strong> | June 16 - June 22</li>
+            <li><strong>Spiti Valley</strong> | June 20 - June 26</li>
+            <li><strong>Kashmir</strong> | July 5 - July 10</li>
+          </ul>
+          <a href="#group-trips" class="panel-link">See full schedule</a>
+        </aside>
       </div>
     </section>
 
-    <section id="trips" class="section">
+    <section id="group-trips" class="section">
       <div class="container">
-        <h2>Featured Trips</h2>
+        <div class="section-head reveal">
+          <p class="eyebrow">Our Group Trips</p>
+          <h2>Join like-minded travelers on fixed departures.</h2>
+        </div>
         <div class="trip-grid">
-          <article class="trip-card">
-            <h3>Spiti Circuit</h3>
-            <p>High-altitude villages, monasteries, and iconic mountain roads.</p>
-            <a href="#contact">Request details</a>
+          <article class="trip-card reveal">
+            <p class="trip-date">June 16 - 22</p>
+            <h3>Meghalaya Backpacking</h3>
+            <p>Living root bridges, waterfall trails, and local village experiences in a compact itinerary.</p>
+            <a href="#contact">Get itinerary</a>
           </article>
-          <article class="trip-card">
-            <h3>Meghalaya Escape</h3>
-            <p>Living root bridges, waterfalls, and local food trails.</p>
-            <a href="#contact">Request details</a>
+          <article class="trip-card reveal">
+            <p class="trip-date">June 20 - 26</p>
+            <h3>Spiti Valley Expedition</h3>
+            <p>Monasteries, high mountain roads, and stargazing nights with planned acclimatization buffers.</p>
+            <a href="#contact">Get itinerary</a>
           </article>
-          <article class="trip-card">
-            <h3>Kashmir Valley</h3>
-            <p>Lakeside stays, alpine meadows, and guided daily plans.</p>
-            <a href="#contact">Request details</a>
+          <article class="trip-card reveal">
+            <p class="trip-date">July 5 - 10</p>
+            <h3>Kashmir Escape</h3>
+            <p>Houseboats, alpine meadows, and valley viewpoints with curated stays and local transport.</p>
+            <a href="#contact">Get itinerary</a>
           </article>
         </div>
       </div>
     </section>
 
-    <section id="why-us" class="section section-alt">
+    <section id="destinations" class="section section-alt">
       <div class="container">
-        <h2>Why Travelers Pick OWF</h2>
-        <ul class="feature-list">
-          <li>Clear inclusions and no hidden charges.</li>
-          <li>Optimized itineraries with buffer time.</li>
-          <li>Fast support before and during travel.</li>
+        <div class="section-head reveal">
+          <p class="eyebrow">Top Destinations</p>
+          <h2>Popular routes travelers keep coming back to.</h2>
+        </div>
+        <div class="destination-grid">
+          <article class="destination reveal">
+            <h3>Himachal Pradesh</h3>
+            <p>Spiti, Kasol, and mountain circuit journeys across changing seasons.</p>
+          </article>
+          <article class="destination reveal">
+            <h3>Meghalaya</h3>
+            <p>Green valleys, cave systems, and immersive northeast travel experiences.</p>
+          </article>
+          <article class="destination reveal">
+            <h3>Kashmir</h3>
+            <p>Lake stays, local culture, and scenic alpine drives through the valley.</p>
+          </article>
+          <article class="destination reveal">
+            <h3>Custom India Trips</h3>
+            <p>Tell us your dates and budget, and we design a personalized route for you.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-us" class="section">
+      <div class="container why-grid">
+        <div class="reveal">
+          <p class="eyebrow">Why Choose Us</p>
+          <h2>Travel planning that is simple, clear, and dependable.</h2>
+        </div>
+        <ul class="feature-list reveal">
+          <li>Carefully curated itineraries with balanced travel days.</li>
+          <li>Transparent inclusions and clear pricing structure.</li>
+          <li>On-trip support with a fast response team.</li>
+          <li>Experienced local partners and verified stays.</li>
         </ul>
       </div>
     </section>
 
-    <section id="contact" class="section">
-      <div class="container contact-box">
-        <h2>Ready to plan?</h2>
-        <p>Message us and we will share the right itinerary based on your dates and budget.</p>
-        <a class="btn btn-primary" href="mailto:hello@owftrips.com">hello@owftrips.com</a>
+    <section id="reviews" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Customer Reviews</p>
+          <h2>Real feedback from previous travelers.</h2>
+        </div>
+        <div class="review-grid">
+          <blockquote class="review reveal">
+            "Itinerary was smooth and the team support was prompt before and during the trip."
+            <cite>- Group Traveler, Spiti</cite>
+          </blockquote>
+          <blockquote class="review reveal">
+            "Great coordination and transparent communication throughout the booking process."
+            <cite>- Couple Traveler, Kashmir</cite>
+          </blockquote>
+          <blockquote class="review reveal">
+            "Loved the Meghalaya route and local experiences we usually miss in regular plans."
+            <cite>- Solo Traveler, Meghalaya</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container about-box reveal">
+        <div>
+          <p class="eyebrow">About OWF Trips</p>
+          <h2>Built by travelers, designed for travelers.</h2>
+          <p>
+            OWF Trips started to make Indian travel simpler and better organized.
+            We combine on-ground knowledge with practical planning so you spend more time exploring and less time figuring things out.
+          </p>
+        </div>
+        <a class="btn btn-secondary" href="#contact">Know More</a>
+      </div>
+    </section>
+
+    <section id="contact" class="section section-contact">
+      <div class="container contact-box reveal">
+        <h2>Let's plan your next trip.</h2>
+        <p>Share your destination, dates, and group size. We will suggest the best itinerary options for you.</p>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:hello@owftrips.com">Email Us</a>
+          <a class="btn btn-secondary" href="tel:+919999999999">Call Us</a>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
+    <div class="container footer-wrap">
       <p>&copy; <span id="year"></span> OWF Trips. All rights reserved.</p>
+      <p>One Way Fly | India</p>
     </div>
   </footer>
 

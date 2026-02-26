@@ -189,14 +189,16 @@ export default function HomePage() {
     galleryRef.current.scrollBy({ left: distance, behavior: "smooth" });
   };
 
-  const year = new Date().getFullYear();
-
   return (
     <>
       <header className="site-header">
         <div className="container nav-wrap">
           <a className="brand" href="#home">
-            OWF Trips
+            <img
+              className="brand-logo"
+              src="https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/logo.png"
+              alt="OWF Trips"
+            />
           </a>
           <button
             className="menu-toggle"
@@ -207,11 +209,11 @@ export default function HomePage() {
             Menu
           </button>
           <nav id="site-nav" className={`nav-links ${menuOpen ? "open" : ""}`} aria-label="Main navigation">
+            <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
             <a href="#group-trips" onClick={() => setMenuOpen(false)}>Group Trips</a>
-            <a href="#trip-leaders" onClick={() => setMenuOpen(false)}>Trip Leaders</a>
-            <a href="#reviews" onClick={() => setMenuOpen(false)}>Reviews</a>
-            <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
-            <a href="#contact" className="nav-cta" onClick={() => setMenuOpen(false)}>Plan My Trip</a>
+            <a href="#customized-trips" onClick={() => setMenuOpen(false)}>Customized Trips</a>
+            <a href="#payments" onClick={() => setMenuOpen(false)}>Payments</a>
+            <a href="#about-us" onClick={() => setMenuOpen(false)}>About Us</a>
           </nav>
         </div>
       </header>
@@ -393,36 +395,92 @@ export default function HomePage() {
           </div>
         </section>
 
-        <section id="about" className="section">
-          <div className="container about-box reveal">
-            <div>
-              <p className="eyebrow">About OWF Trips</p>
-              <h2>Built by travelers, designed for travelers.</h2>
-              <p>
-                OWF Trips started to make Indian travel simpler and better organized.
-                We combine on-ground knowledge with practical planning so you spend more time exploring and less time figuring things out.
-              </p>
-            </div>
-            <a className="btn btn-secondary" href="#contact">Know More</a>
-          </div>
-        </section>
-
-        <section id="contact" className="section section-contact">
-          <div className="container contact-box reveal">
-            <h2>Let's plan your next trip.</h2>
-            <p>Share your destination, dates, and group size. We will suggest the best itinerary options for you.</p>
-            <div className="contact-actions">
-              <a className="btn btn-primary" href="mailto:hello@owftrips.com">Email Us</a>
-              <a className="btn btn-secondary" href="tel:+919999999999">Call Us</a>
-            </div>
-          </div>
-        </section>
       </main>
 
-      <footer className="site-footer">
-        <div className="container footer-wrap">
-          <p>&copy; {year} OWF Trips. All rights reserved.</p>
-          <p>One Way Fly | India</p>
+      <footer className="site-footer" aria-label="Company footer">
+        <div className="footer-inner">
+          <h3 className="footer-company">OWF TRIPS LLP</h3>
+          <p className="footer-address">LLPIN: ACP-8848</p>
+          <p className="footer-address">
+            Varthur Main Rd, opp. Dmart, Brookefield, Bengaluru, Karnataka 560066
+          </p>
+
+          <div className="footer-contact-row">
+            <a className="footer-contact-link" href="mailto:bookings@owftrips.in">
+              bookings@owftrips.in
+            </a>
+            <a className="footer-contact-link" href="tel:+918296966873">
+              +91-8296966873
+            </a>
+            <a
+              className="footer-contact-link"
+              href="https://www.owftrips.in"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              www.owftrips.in
+            </a>
+          </div>
+
+          <div className="footer-quick-links" aria-label="Quick links">
+            <p className="footer-quick-title">Quick Links</p>
+            <div className="footer-quick-grid">
+              <a className="footer-quick-link" href="#about">About Us</a>
+              <a className="footer-quick-link" href="#">Privacy Policy</a>
+              <a className="footer-quick-link" href="#">Cancellation Policy</a>
+              <a className="footer-quick-link" href="#">Terms &amp; Condition</a>
+              <a className="footer-quick-link" href="#">Disclaimer</a>
+              <a className="footer-quick-link" href="#">Payments</a>
+            </div>
+          </div>
+
+          <div className="footer-social" aria-label="Social links">
+            <a
+              className="footer-social-link"
+              href="https://www.facebook.com/owftrips"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+            >
+              <img
+                className="footer-social-icon"
+                src="https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/facebook-round-color-icon.svg"
+                alt=""
+                loading="lazy"
+              />
+            </a>
+            <a
+              className="footer-social-link"
+              href="https://www.instagram.com/owftrips"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+            >
+              <img
+                className="footer-social-icon"
+                src="https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/ig-instagram-icon.svg"
+                alt=""
+                loading="lazy"
+              />
+            </a>
+            <a
+              className="footer-social-link"
+              href="https://www.youtube.com/@owftrips"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+            >
+              <img
+                className="footer-social-icon"
+                src="https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/youtube-color-icon.svg"
+                alt=""
+                loading="lazy"
+              />
+            </a>
+          </div>
+
+          <div className="footer-skyline" aria-hidden="true"></div>
+          <p className="footer-copy">&copy; OWF TRIPS LLP, All rights reserved.</p>
         </div>
       </footer>
 

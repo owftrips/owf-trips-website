@@ -31,3 +31,15 @@ if (menuToggle && nav) {
     });
   });
 }
+
+const scrollButtons = document.querySelectorAll(".scroll-arrow[data-scroll-target]");
+scrollButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const targetId = button.getAttribute("data-scroll-target");
+    const direction = Number(button.getAttribute("data-direction")) || 0;
+    if (!targetId || direction === 0) return;
+    const container = document.getElementById(targetId);
+    if (!container) return;
+    container.scrollBy({ left: direction, behavior: "smooth" });
+  });
+});

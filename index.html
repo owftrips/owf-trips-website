@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>OWF Trips | Explore India Better</title>
   <meta name="description" content="OWF Trips offers curated group departures and custom trips across India with transparent planning and on-ground support." />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Outfit:wght@500;700&display=swap" rel="stylesheet" />
@@ -64,25 +65,40 @@
           <p class="eyebrow">Our Group Trips</p>
           <h2>Join like-minded travelers on fixed departures.</h2>
         </div>
-        <div class="trip-grid">
-          <article class="trip-card reveal">
-            <p class="trip-date">June 16 - 22</p>
-            <h3>Meghalaya Backpacking</h3>
-            <p>Living root bridges, waterfall trails, and local village experiences in a compact itinerary.</p>
-            <a href="#contact">Get itinerary</a>
-          </article>
-          <article class="trip-card reveal">
-            <p class="trip-date">June 20 - 26</p>
-            <h3>Spiti Valley Expedition</h3>
-            <p>Monasteries, high mountain roads, and stargazing nights with planned acclimatization buffers.</p>
-            <a href="#contact">Get itinerary</a>
-          </article>
-          <article class="trip-card reveal">
-            <p class="trip-date">July 5 - 10</p>
-            <h3>Kashmir Escape</h3>
-            <p>Houseboats, alpine meadows, and valley viewpoints with curated stays and local transport.</p>
-            <a href="#contact">Get itinerary</a>
-          </article>
+        <div class="trip-scroll-wrap reveal">
+          <button class="scroll-arrow left-arrow" data-scroll-target="upcomingTrips" data-direction="-320" aria-label="Scroll trips left">
+            <i class="fas fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <div class="trip-scroll-container" id="upcomingTrips" aria-label="Upcoming group trips">
+            <a class="upcoming-trip-card" href="https://www.owftrips.in/magical-meghalaya-trip" target="_blank" rel="noopener noreferrer">
+              <img src="https://owf-website-content.s3.ap-south-1.amazonaws.com/IMG_3775.JPG" alt="Meghalaya road trip waterfall view" loading="lazy" />
+              <span class="trip-price">₹22,499/- Onwards</span>
+              <div class="trip-overlay">
+                <h3>Meghalaya Road Trip</h3>
+                <p class="trip-meta">
+                  <span><i class="fas fa-clock" aria-hidden="true"></i> 6N/7D</span>
+                  <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Guwahati</span>
+                </p>
+                <p class="trip-batch"><i class="fas fa-calendar-alt" aria-hidden="true"></i> 22 Feb, 1 Mar</p>
+              </div>
+            </a>
+
+            <a class="upcoming-trip-card" href="https://www.owftrips.in/winter-spiti-backpacking" target="_blank" rel="noopener noreferrer">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Kee_monastery_Spiti_Valley_%28edited%29.jpg" alt="Winter Spiti Backpacking Trip" loading="lazy" />
+              <span class="trip-price">₹22,500/- Onwards</span>
+              <div class="trip-overlay">
+                <h3>Winter Spiti Backpacking Trip</h3>
+                <p class="trip-meta">
+                  <span><i class="fas fa-clock" aria-hidden="true"></i> 6N/7D</span>
+                  <span><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Delhi</span>
+                </p>
+                <p class="trip-batch"><i class="fas fa-calendar-alt" aria-hidden="true"></i> 1 Mar, 7 Mar +3 batches</p>
+              </div>
+            </a>
+          </div>
+          <button class="scroll-arrow right-arrow" data-scroll-target="upcomingTrips" data-direction="320" aria-label="Scroll trips right">
+            <i class="fas fa-chevron-right" aria-hidden="true"></i>
+          </button>
         </div>
       </div>
     </section>

@@ -43,3 +43,44 @@ scrollButtons.forEach((button) => {
     container.scrollBy({ left: direction, behavior: "smooth" });
   });
 });
+
+const popupOverlay = document.getElementById("popupOverlay");
+const leaderCards = document.querySelectorAll(".leader-card[data-popup-id]");
+const popups = document.querySelectorAll(".leader-popup");
+const closeButtons = document.querySelectorAll(".popup-close");
+
+const closeAllPopups = () => {
+  popups.forEach((popup) => popup.setAttribute("hidden", ""));
+  if (popupOverlay) popupOverlay.setAttribute("hidden", "");
+  document.body.style.overflow = "";
+};
+
+const openPopup = (popupId) => {
+  const popup = document.getElementById(popupId);
+  if (!popup || !popupOverlay) return;
+  closeAllPopups();
+  popup.removeAttribute("hidden");
+  popupOverlay.removeAttribute("hidden");
+  document.body.style.overflow = "hidden";
+};
+
+leaderCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    const popupId = card.getAttribute("data-popup-id");
+    if (popupId) openPopup(popupId);
+  });
+
+  card.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    event.preventDefault();
+    const popupId = card.getAttribute("data-popup-id");
+    if (popupId) openPopup(popupId);
+  });
+});
+
+if (popupOverlay) popupOverlay.addEventListener("click", closeAllPopups);
+closeButtons.forEach((button) => button.addEventListener("click", closeAllPopups));
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeAllPopups();
+});

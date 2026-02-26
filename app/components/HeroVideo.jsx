@@ -32,7 +32,7 @@ export default function HeroVideo() {
           preload="metadata"
           poster="/images/hero-poster.png"
         >
-          <source src="/videos/owf-hero.mp4" type="video/mp4" />
+          <source src="https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/OWF+Cover+video.mp4" type="video/mp4" />
         </video>
 
         <div className="hero-video-overlay" aria-hidden="true"></div>

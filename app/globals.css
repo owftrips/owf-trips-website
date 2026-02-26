@@ -158,33 +158,6 @@ h3 {
   display: block;
 }
 
-.hero-video-overlay {
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 40%, rgb(0 0 0 / 14%) 0%, rgb(0 0 0 / 46%) 72%);
-}
-
-.hero-video-content {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-content: center;
-  text-align: center;
-  color: #fff;
-  padding: 1rem;
-}
-
-.hero-video-content h1 {
-  margin: 0;
-  font-size: clamp(2rem, 4.2vw, 3.3rem);
-}
-
-.hero-video-content p {
-  margin: 0.55rem 0 0;
-  color: #ffd324;
-  font-weight: 800;
-  font-size: clamp(1.2rem, 2vw, 1.9rem);
-}
 
 .hero-rating-strip {
   display: flex;
@@ -701,14 +674,6 @@ h3 {
 
   .section {
     padding: 3rem 0;
-  }
-
-  .hero-video-content h1 {
-    font-size: clamp(1.6rem, 8vw, 2rem);
-  }
-
-  .hero-video-content p {
-    font-size: clamp(1rem, 5.4vw, 1.35rem);
   }
 
   .hero-rating-strip {

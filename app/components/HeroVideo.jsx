@@ -34,13 +34,6 @@ export default function HeroVideo() {
         >
           <source src="https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/OWF+Cover+video.mp4" type="video/mp4" />
         </video>
-
-        <div className="hero-video-overlay" aria-hidden="true"></div>
-
-        <div className="hero-video-content">
-          <h1>Global Community of Travelers</h1>
-          <p>Spreading Happiness</p>
-        </div>
       </div>
 
       <div className="hero-rating-strip reveal" aria-label="Traveler ratings">

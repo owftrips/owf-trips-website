@@ -175,20 +175,10 @@ h3 {
   align-items: center;
 }
 
-.hero-rating-item i {
-  font-size: 2rem;
-}
-
-.hero-rating-item .fa-google {
-  color: #4285f4;
-}
-
-.hero-rating-item .fa-tripadvisor {
-  color: #222;
-}
-
-.hero-rating-item .fa-facebook {
-  color: #1877f2;
+.hero-rating-icon {
+  width: 2rem;
+  height: 2rem;
+  flex: 0 0 auto;
 }
 
 .hero-rating-score {
@@ -613,8 +603,9 @@ h3 {
     padding: 0.7rem 0.6rem;
   }
 
-  .hero-rating-item i {
-    font-size: 1.65rem;
+  .hero-rating-icon {
+    width: 1.65rem;
+    height: 1.65rem;
   }
 
   .menu-toggle {
@@ -685,8 +676,9 @@ h3 {
     gap: 0.32rem;
   }
 
-  .hero-rating-item i {
-    font-size: 1.35rem;
+  .hero-rating-icon {
+    width: 1.35rem;
+    height: 1.35rem;
   }
 
   .hero-rating-score {

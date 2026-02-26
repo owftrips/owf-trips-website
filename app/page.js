@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import HeroVideo from "./components/HeroVideo";
 
 const upcomingTrips = [
   {
@@ -125,37 +126,7 @@ export default function HomePage() {
       </header>
 
       <main id="home">
-        <section className="hero section">
-          <div className="container hero-grid">
-            <div className="reveal">
-              <p className="eyebrow">Welcome to OWF Trips</p>
-              <h1>Travel better with curated trips and stress-free planning.</h1>
-              <p className="hero-copy">
-                One Way Fly brings you group departures and personalized trips across India.
-                We focus on smart itineraries, transparent costs, and support from planning to return.
-              </p>
-              <div className="hero-actions">
-                <a className="btn btn-primary" href="#group-trips">Explore Group Trips</a>
-                <a className="btn btn-secondary" href="#contact">Talk to Us</a>
-              </div>
-              <ul className="hero-points">
-                <li>Curated departures</li>
-                <li>Custom itineraries</li>
-                <li>Reliable support</li>
-              </ul>
-            </div>
-            <aside className="hero-panel reveal" aria-label="Upcoming group trips highlight">
-              <p className="panel-kicker">June - July 2026</p>
-              <h2>Next Departures</h2>
-              <ul>
-                <li><strong>Meghalaya</strong> | June 16 - June 22</li>
-                <li><strong>Spiti Valley</strong> | June 20 - June 26</li>
-                <li><strong>Kashmir</strong> | July 5 - July 10</li>
-              </ul>
-              <a href="#group-trips" className="panel-link">See full schedule</a>
-            </aside>
-          </div>
-        </section>
+        <HeroVideo />
 
         <section id="group-trips" className="section">
           <div className="container">

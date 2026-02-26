@@ -24,6 +24,7 @@ body {
   font-family: "Manrope", sans-serif;
   color: var(--text);
   line-height: 1.6;
+  overflow-x: hidden;
   background:
     radial-gradient(1200px 500px at 10% -10%, var(--sky), transparent 60%),
     radial-gradient(1000px 380px at 100% 0%, var(--sand), transparent 58%),
@@ -146,13 +147,13 @@ h3 {
   position: relative;
   border-radius: 0 0 16px 16px;
   overflow: hidden;
-  min-height: 470px;
+  min-height: clamp(360px, 56vw, 470px);
 }
 
 .hero-video {
   width: 100%;
   height: 100%;
-  min-height: 470px;
+  min-height: clamp(360px, 56vw, 470px);
   object-fit: cover;
   display: block;
 }
@@ -287,6 +288,7 @@ h3 {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  scroll-padding-left: 0.2rem;
   padding: 0.2rem;
 }
 
@@ -407,6 +409,7 @@ h3 {
   overflow-x: auto;
   gap: 0.95rem;
   padding: 0.2rem;
+  scroll-padding-left: 0.2rem;
   scroll-snap-type: x mandatory;
 }
 
@@ -594,6 +597,10 @@ h3 {
 }
 
 @media (max-width: 980px) {
+  .section {
+    padding: 3.5rem 0;
+  }
+
   .destination-grid,
   .review-grid,
   .why-grid {
@@ -623,13 +630,14 @@ h3 {
 
   .hero-video-frame,
   .hero-video {
-    min-height: 390px;
+    min-height: 340px;
     border-radius: 0;
   }
 
   .hero-rating-strip {
     gap: 1rem;
     border-radius: 0;
+    padding: 0.7rem 0.6rem;
   }
 
   .hero-rating-item i {
@@ -651,6 +659,7 @@ h3 {
     padding: 0.8rem 4%;
     background: rgb(247 243 236 / 96%);
     border-bottom: 1px solid var(--line);
+    box-shadow: 0 12px 24px rgb(35 24 16 / 10%);
   }
 
   .nav-links.open {
@@ -659,7 +668,7 @@ h3 {
 
   .nav-links a {
     width: 100%;
-    padding: 0.5rem 0;
+    padding: 0.65rem 0;
   }
 
   .nav-cta {
@@ -667,7 +676,77 @@ h3 {
     text-align: center;
   }
 
+  .upcoming-trip-card {
+    flex-basis: 88vw;
+  }
+
+  .leader-card {
+    flex-basis: 84vw;
+  }
+
+  .contact-box,
+  .about-box {
+    padding: 1rem;
+  }
+
   .scroll-arrow {
     display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 94%;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .hero-video-content h1 {
+    font-size: clamp(1.6rem, 8vw, 2rem);
+  }
+
+  .hero-video-content p {
+    font-size: clamp(1rem, 5.4vw, 1.35rem);
+  }
+
+  .hero-rating-strip {
+    gap: 0.7rem;
+    justify-content: space-between;
+  }
+
+  .hero-rating-item {
+    gap: 0.32rem;
+  }
+
+  .hero-rating-item i {
+    font-size: 1.35rem;
+  }
+
+  .hero-rating-score {
+    font-size: 0.82rem;
+  }
+
+  .hero-rating-reviews {
+    font-size: 0.76rem;
+  }
+
+  .upcoming-trip-card {
+    flex-basis: 92vw;
+  }
+
+  .leader-card {
+    flex-basis: 90vw;
+  }
+
+  .leader-popup {
+    width: 94vw;
+    max-height: 84vh;
+    padding: 0.9rem 0.85rem 1rem;
+  }
+
+  .leader-popup p {
+    font-size: 0.9rem;
   }
 }

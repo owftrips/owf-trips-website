@@ -7,7 +7,10 @@ const roboto = Roboto({
 });
 
 export const metadata = {
-  title: "OWF Trips | Explore India Better",
+  title: {
+    default: "OWF Trips | Explore India Better",
+    template: "%s | OWF Trips",
+  },
   description:
     "OWF Trips offers curated group departures and custom trips across India with transparent planning and on-ground support.",
 };
@@ -27,7 +30,12 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
         />
       </head>
-      <body className={roboto.className}>{children}</body>
+      <body className={roboto.className}>
+        <a href="#main-content" className="skip-link">
+          Skip to content
+        </a>
+        {children}
+      </body>
     </html>
   );
 }

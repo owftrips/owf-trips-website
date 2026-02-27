@@ -1,7 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Script from "next/script";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 import HeroVideo from "./components/HeroVideo";
 
 const upcomingTrips = [
@@ -9,7 +12,7 @@ const upcomingTrips = [
     name: "Meghalaya Road Trip",
     url: "https://www.owftrips.in/magical-meghalaya-trip",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/IMG_3775.JPG",
-    price: "₹22,499/-",
+    price: "\u20B922,499/-",
     priceSuffix: "Onwards",
     duration: "6N/7D",
     pickup: "Guwahati - Guwahati",
@@ -21,7 +24,7 @@ const upcomingTrips = [
     url: "https://www.owftrips.in/winter-spiti-backpacking",
     image:
       "https://upload.wikimedia.org/wikipedia/commons/f/f5/Kee_monastery_Spiti_Valley_%28edited%29.jpg",
-    price: "₹22,500/-",
+    price: "\u20B922,500/-",
     priceSuffix: "Onwards",
     duration: "6N/7D",
     pickup: "Delhi - Delhi",
@@ -37,7 +40,7 @@ const leaders = [
     title: "Captain Kush",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/IMG_1598.webp",
     alt: "Captain Kush",
-    bio: "Captain Kush, the ultimate trip leader, embodies the perfect blend of leadership, wisdom, and passion for exploration. With an encyclopedic understanding of diverse destinations from hidden gems to iconic landmarks, Kush ensures that every journey is rich with discovery and insight. Spanning continents, cultures, and climates, Kush's extensive experience makes navigating any scenario a breeze. Their profound knowledge encompasses not just the geography and history of each location, but also the intricate details that make every place unique: local traditions, culinary delights, and secret spots known only to the most seasoned travelers. With an innate ability to inspire and motivate, Kush fosters a sense of camaraderie and adventure among the group. Their exceptional organizational skills guarantee seamless travel experiences, while their keen problem-solving abilities ensure that any challenges are swiftly and skillfully managed. Whether scaling mountain peaks, delving into ancient ruins, or wandering through vibrant city streets, Kush transforms each trip into a captivating journey. Their passion for travel is contagious, their stories are enthralling, and their leadership is unwavering, making every adventure not just a trip, but a transformative experience.",
+    bio: "Captain Kush, the ultimate trip leader, embodies the perfect blend of leadership, wisdom, and passion for exploration. With an encyclopedic understanding of diverse destinations from hidden gems to iconic landmarks, Kush ensures that every journey is rich with discovery and insight. Spanning continents, cultures, and climates, Kush\u2019s extensive experience makes navigating any scenario a breeze. Their profound knowledge encompasses not just the geography and history of each location, but also the intricate details that make every place unique: local traditions, culinary delights, and secret spots known only to the most seasoned travelers. With an innate ability to inspire and motivate, Kush fosters a sense of camaraderie and adventure among the group. Their exceptional organizational skills guarantee seamless travel experiences, while their keen problem-solving abilities ensure that any challenges are swiftly and skillfully managed. Whether scaling mountain peaks, delving into ancient ruins, or wandering through vibrant city streets, Kush transforms each trip into a captivating journey. Their passion for travel is contagious, their stories are enthralling, and their leadership is unwavering, making every adventure not just a trip, but a transformative experience.",
   },
   {
     id: "leader-popup-2",
@@ -45,7 +48,7 @@ const leaders = [
     title: "Captain Chill",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/IMG_1618.webp",
     alt: "Captain Chill",
-    bio: "Captain Chill is the ultimate trip leader, effortlessly blending expertise and charisma. Known for his relaxed and approachable demeanor, Captain Chill makes every journey feel like a breeze. With years of experience navigating diverse terrains and leading groups, he exudes confidence and calm, ensuring that everyone in his charge feels secure and at ease. Captain Chill's coolness is not just about his laid-back attitude; it is also reflected in his impeccable organizational skills and his knack for turning potential hiccups into memorable adventures. Whether you're exploring rugged mountains, serene beaches, or bustling cityscapes, Captain Chill's insightful guidance and infectious positivity elevate every experience. His knack for storytelling and deep knowledge of local cultures and environments keep everyone engaged and entertained throughout the trip. With Captain Chill at the helm, you're guaranteed not just a trip, but an unforgettable journey filled with laughter, learning, and unparalleled cool vibes.",
+    bio: "Captain Chill is the ultimate trip leader, effortlessly blending expertise and charisma. Known for his relaxed and approachable demeanor, Captain Chill makes every journey feel like a breeze. With years of experience navigating diverse terrains and leading groups, he exudes confidence and calm, ensuring that everyone in his charge feels secure and at ease. Captain Chill\u2019s coolness is not just about his laid-back attitude; it is also reflected in his impeccable organizational skills and his knack for turning potential hiccups into memorable adventures. Whether you\u2019re exploring rugged mountains, serene beaches, or bustling cityscapes, Captain Chill\u2019s insightful guidance and infectious positivity elevate every experience. His knack for storytelling and deep knowledge of local cultures and environments keep everyone engaged and entertained throughout the trip. With Captain Chill at the helm, you\u2019re guaranteed not just a trip, but an unforgettable journey filled with laughter, learning, and unparalleled cool vibes.",
   },
   {
     id: "leader-popup-3",
@@ -54,96 +57,96 @@ const leaders = [
     image:
       "https://owf-website-content.s3.ap-south-1.amazonaws.com/IMG_20210403_083014_Bokeh.webp",
     alt: "Captain SMJ",
-    bio: "Meet Captain SMJ, the trip leader with whom every journey becomes a delightful adventure. Renowned for his easy-going nature and open-mindedness, Shailesh is someone you can talk to about anything, making every conversation feel natural and engaging. Whether it is discussing travel tales, sharing personal stories, or exploring new ideas, his company is always enjoyable and enriching. What sets Shailesh apart is his knack for coming up with the most unique and exciting ideas. From off-the-beaten-path excursions to innovative ways to experience well-known destinations, his creativity ensures that every trip is a fresh and memorable experience. His infectious enthusiasm and genuine interest in people foster a welcoming atmosphere where everyone feels included and valued. With Shailesh as your trip leader, expect not just expertly planned itineraries, but also spontaneous adventures that add a special touch to your journey. His ability to connect with people from all walks of life, coupled with his deep knowledge of diverse cultures and locales, makes him an exceptional guide and companion. Whether you're exploring a bustling city, trekking through remote wilderness, or soaking up the sun on a secluded beach, Captain SMJ will make your trip an unforgettable experience filled with laughter, discovery, and joy.",
+    bio: "Meet Captain SMJ, the trip leader with whom every journey becomes a delightful adventure. Renowned for his easy-going nature and open-mindedness, Shailesh is someone you can talk to about anything, making every conversation feel natural and engaging. Whether it is discussing travel tales, sharing personal stories, or exploring new ideas, his company is always enjoyable and enriching. What sets Shailesh apart is his knack for coming up with the most unique and exciting ideas. From off-the-beaten-path excursions to innovative ways to experience well-known destinations, his creativity ensures that every trip is a fresh and memorable experience. His infectious enthusiasm and genuine interest in people foster a welcoming atmosphere where everyone feels included and valued. With Shailesh as your trip leader, expect not just expertly planned itineraries, but also spontaneous adventures that add a special touch to your journey. His ability to connect with people from all walks of life, coupled with his deep knowledge of diverse cultures and locales, makes him an exceptional guide and companion. Whether you\u2019re exploring a bustling city, trekking through remote wilderness, or soaking up the sun on a secluded beach, Captain SMJ will make your trip an unforgettable experience filled with laughter, discovery, and joy.",
   },
 ];
 
 const galleryFrames = [
   {
-    place: "Frame 1",
+    place: "Dawki River, Meghalaya",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/39376+2.jpg",
   },
   {
-    place: "Frame 2",
+    place: "Living Root Bridge, Cherrapunji",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/4D0D6292-B81F-46A2-991B-3E8881C5C4D0.JPG",
   },
   {
-    place: "Frame 3",
+    place: "Mawlynnong Village, Meghalaya",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/6ABA0C34-12BA-4EE6-A932-9D36A120D3D0.JPG",
   },
   {
-    place: "Frame 4",
+    place: "Nohkalikai Falls, Cherrapunji",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_1290_HEIC+2.jpg",
   },
   {
-    place: "Frame 5",
+    place: "Double Decker Bridge Trek",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_1361.jpg",
   },
   {
-    place: "Frame 6",
+    place: "Sunset at Tawang, Arunachal",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_20191101_174143.jpg",
   },
   {
-    place: "Frame 7",
+    place: "Spiti Valley Monastery",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_2402+3.jpg",
   },
   {
-    place: "Frame 8",
+    place: "Chandratal Lake, Spiti",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_2464+2.jpg",
   },
   {
-    place: "Frame 9",
+    place: "Key Monastery, Spiti Valley",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_2894_HEIC.jpg",
   },
   {
-    place: "Frame 10",
+    place: "Umiam Lake, Shillong",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_3470.JPG",
   },
   {
-    place: "Frame 11",
+    place: "Seven Sisters Falls, Meghalaya",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_3618.JPG",
   },
   {
-    place: "Frame 12",
+    place: "Nongriat Trek, Meghalaya",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_3739.jpg",
   },
   {
-    place: "Frame 13",
+    place: "Meghalaya Waterfall Trail",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_3775.JPG",
   },
   {
-    place: "Frame 14",
+    place: "Elephant Falls, Shillong",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_3884+2.JPG",
   },
   {
-    place: "Frame 15",
+    place: "Hampta Pass, Himachal",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_6121.jpg",
   },
   {
-    place: "Frame 16",
+    place: "Kasol Riverside, Parvati Valley",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_6654_HEIC+3.jpg",
   },
   {
-    place: "Frame 17",
+    place: "Dal Lake, Kashmir",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_7239+2.jpg",
   },
   {
-    place: "Frame 18",
+    place: "Gulmarg Meadows, Kashmir",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_8531+2.jpg",
   },
   {
-    place: "Frame 19",
+    place: "Pangong Lake, Ladakh",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/IMG_9987+2.jpg",
   },
   {
-    place: "Frame 20",
+    place: "Manali Mountain View",
     image: "https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/WANDERLUST+IN+FRAME/PHOTO-2025-06-28-09-15-52.jpg",
   },
 ];
 
 export default function HomePage() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [activePopupId, setActivePopupId] = useState("");
+  const [showWhatsApp, setShowWhatsApp] = useState(false);
   const tripsRef = useRef(null);
   const galleryRef = useRef(null);
 
@@ -179,6 +182,14 @@ export default function HomePage() {
     };
   }, [activePopupId]);
 
+  useEffect(() => {
+    const onScroll = () => {
+      setShowWhatsApp(window.scrollY > 400);
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   const scrollTrips = (distance) => {
     if (!tripsRef.current) return;
     tripsRef.current.scrollBy({ left: distance, behavior: "smooth" });
@@ -191,32 +202,7 @@ export default function HomePage() {
 
   return (
     <>
-      <header className="site-header">
-        <div className="container nav-wrap">
-          <a className="brand" href="#home">
-            <img
-              className="brand-logo"
-              src="https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/logo.png"
-              alt="OWF Trips"
-            />
-          </a>
-          <button
-            className="menu-toggle"
-            aria-expanded={menuOpen}
-            aria-controls="site-nav"
-            onClick={() => setMenuOpen((prev) => !prev)}
-          >
-            Menu
-          </button>
-          <nav id="site-nav" className={`nav-links ${menuOpen ? "open" : ""}`} aria-label="Main navigation">
-            <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
-            <a href="#group-trips" onClick={() => setMenuOpen(false)}>Group Trips</a>
-            <a href="#customized-trips" onClick={() => setMenuOpen(false)}>Customized Trips</a>
-            <a href="#payments" onClick={() => setMenuOpen(false)}>Payments</a>
-            <a href="#about-us" onClick={() => setMenuOpen(false)}>About Us</a>
-          </nav>
-        </div>
-      </header>
+      <Header currentPage="home" />
 
       <main id="home">
         <HeroVideo />
@@ -234,7 +220,13 @@ export default function HomePage() {
               <div className="trip-scroll-container" ref={tripsRef} aria-label="Upcoming group trips">
                 {upcomingTrips.map((trip) => (
                   <a key={trip.name} className="upcoming-trip-card" href={trip.url} target="_blank" rel="noopener noreferrer">
-                    <img src={trip.image} alt={trip.alt} loading="lazy" />
+                    <Image
+                      src={trip.image}
+                      alt={trip.alt}
+                      fill
+                      sizes="(max-width: 480px) 92vw, (max-width: 760px) 88vw, 350px"
+                      style={{ objectFit: "cover" }}
+                    />
                     <span className="trip-price">
                       <span className="trip-price-value">{trip.price}</span>{" "}
                       <span className="trip-price-suffix">{trip.priceSuffix}</span>
@@ -280,7 +272,7 @@ export default function HomePage() {
           <div className="container">
             <div className="section-head reveal">
               <h2 className="trip-leaders-heading">OWF Trip Leaders</h2>
-              <p className="trip-leaders-subheading">Get To Know India's Coolest Trip Leaders!</p>
+              <p className="trip-leaders-subheading">Get To Know India&apos;s Coolest Trip Leaders!</p>
             </div>
             <div className="leaders-scroll reveal" aria-label="OWF Trip leaders">
               {leaders.map((leader) => (
@@ -297,7 +289,16 @@ export default function HomePage() {
                     setActivePopupId(leader.id);
                   }}
                 >
-                  <img src={leader.image} alt={leader.alt} className="leader-img" loading="lazy" />
+                  <div className="leader-img-wrap">
+                    <Image
+                      src={leader.image}
+                      alt={leader.alt}
+                      className="leader-img"
+                      width={320}
+                      height={400}
+                      sizes="(max-width: 480px) 90vw, (max-width: 760px) 84vw, 320px"
+                    />
+                  </div>
                   <div className="leader-info">
                     <h3>{leader.name}</h3>
                     <p>{leader.title}</p>
@@ -313,9 +314,14 @@ export default function HomePage() {
           <div className="container">
             <div className="section-head reveal">
               <h2 className="reviews-heading">Reviews</h2>
-              <p className="reviews-subheading">from our Trippers to Us ❤️</p>
+              <p className="reviews-subheading">from our Trippers to Us</p>
             </div>
             <div className="review-widget reveal">
+              <div className="review-widget-skeleton" aria-hidden="true">
+                <div className="skeleton-card"></div>
+                <div className="skeleton-card"></div>
+                <div className="skeleton-card"></div>
+              </div>
               <Script
                 src="https://static.elfsight.com/platform/platform.js"
                 data-use-service-core
@@ -377,7 +383,13 @@ export default function HomePage() {
 
                   return (
                     <article key={`${frame.place}-${index}`} className={cardClass}>
-                      <img src={frame.image} alt={`${frame.place} trip photo`} loading="lazy" />
+                      <Image
+                        src={frame.image}
+                        alt={`${frame.place} trip photo`}
+                        fill
+                        sizes="(max-width: 480px) 82vw, (max-width: 760px) 72vw, 25vw"
+                        style={{ objectFit: "cover" }}
+                      />
                     </article>
                   );
                 })}
@@ -394,96 +406,22 @@ export default function HomePage() {
             </div>
           </div>
         </section>
-
       </main>
 
-      <footer className="site-footer" aria-label="Company footer">
-        <div className="footer-inner">
-          <h3 className="footer-company">OWF TRIPS LLP</h3>
-          <p className="footer-address">LLPIN: ACP-8848</p>
-          <p className="footer-address">
-            Varthur Main Rd, opp. Dmart, Brookefield, Bengaluru, Karnataka 560066
-          </p>
+      <Footer />
 
-          <div className="footer-contact-row">
-            <a className="footer-contact-link" href="mailto:bookings@owftrips.in">
-              bookings@owftrips.in
-            </a>
-            <a className="footer-contact-link" href="tel:+918296966873">
-              +91-8296966873
-            </a>
-            <a
-              className="footer-contact-link"
-              href="https://www.owftrips.in"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              www.owftrips.in
-            </a>
-          </div>
+      {/* Floating WhatsApp button */}
+      <a
+        className={`floating-whatsapp ${showWhatsApp ? "visible" : ""}`}
+        href="https://wa.me/message/ZLIG4WNMOLF2P1"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+      >
+        <i className="fab fa-whatsapp" aria-hidden="true"></i>
+      </a>
 
-          <div className="footer-quick-links" aria-label="Quick links">
-            <p className="footer-quick-title">Quick Links</p>
-            <div className="footer-quick-grid">
-              <a className="footer-quick-link" href="#about">About Us</a>
-              <a className="footer-quick-link" href="#">Privacy Policy</a>
-              <a className="footer-quick-link" href="#">Cancellation Policy</a>
-              <a className="footer-quick-link" href="#">Terms &amp; Condition</a>
-              <a className="footer-quick-link" href="#">Disclaimer</a>
-              <a className="footer-quick-link" href="#">Payments</a>
-            </div>
-          </div>
-
-          <div className="footer-social" aria-label="Social links">
-            <a
-              className="footer-social-link"
-              href="https://www.facebook.com/owftrips"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Facebook"
-            >
-              <img
-                className="footer-social-icon"
-                src="https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/facebook-round-color-icon.svg"
-                alt=""
-                loading="lazy"
-              />
-            </a>
-            <a
-              className="footer-social-link"
-              href="https://www.instagram.com/owftrips"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Instagram"
-            >
-              <img
-                className="footer-social-icon"
-                src="https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/ig-instagram-icon.svg"
-                alt=""
-                loading="lazy"
-              />
-            </a>
-            <a
-              className="footer-social-link"
-              href="https://www.youtube.com/@owftrips"
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="YouTube"
-            >
-              <img
-                className="footer-social-icon"
-                src="https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/youtube-color-icon.svg"
-                alt=""
-                loading="lazy"
-              />
-            </a>
-          </div>
-
-          <div className="footer-skyline" aria-hidden="true"></div>
-          <p className="footer-copy">&copy; OWF TRIPS LLP, All rights reserved.</p>
-        </div>
-      </footer>
-
+      {/* Leader popups */}
       <div
         className="popup-overlay"
         hidden={!activePopupId}

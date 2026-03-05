@@ -1637,27 +1637,31 @@ h3 {
   line-height: 1.6;
 }
 
-.policy-cta-button {
+.policy-cta-button,
+.policy-content a.policy-cta-button {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
   padding: 0.75rem 1.6rem;
   background: linear-gradient(135deg, var(--brand), var(--brand-deep));
-  color: #fff;
+  color: #fff !important;
   border-radius: 60px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none !important;
   transition: all 0.3s ease;
   box-shadow: 0 4px 16px rgba(31, 111, 235, 0.3);
   white-space: nowrap;
+  letter-spacing: 0.01em;
 }
 
-.policy-cta-button:hover {
+.policy-cta-button:hover,
+.policy-content a.policy-cta-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(31, 111, 235, 0.4);
-  color: #fff;
-  text-decoration: none;
+  box-shadow: 0 8px 28px rgba(31, 111, 235, 0.45);
+  color: #fff !important;
+  text-decoration: none !important;
+  background: linear-gradient(135deg, #2878ff, var(--brand-deep));
 }
 
 .policy-placeholder {

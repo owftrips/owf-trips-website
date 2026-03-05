@@ -3153,6 +3153,69 @@ h3 {
   flex-shrink: 0;
 }
 
+/* ── Quick method picker ── */
+.pay-method-picker {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.pay-method-pick-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.8rem 0.75rem;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: "Outfit", sans-serif;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pay-method-pick-btn:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+  background: var(--sky);
+}
+
+.pay-method-pick-btn.active {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: #fff;
+  box-shadow: 0 3px 14px rgba(31,111,235,0.28);
+}
+
+.pay-pick-green:hover { border-color: #27ae60; color: #27ae60; background: #f0fdf4; }
+.pay-pick-green.active { border-color: #27ae60; background: #27ae60; box-shadow: 0 3px 14px rgba(39,174,96,0.28); }
+
+.pay-pick-purple:hover { border-color: #8e44ad; color: #8e44ad; background: #faf0ff; }
+.pay-pick-purple.active { border-color: #8e44ad; background: #8e44ad; box-shadow: 0 3px 14px rgba(142,68,173,0.28); }
+
+.pay-pick-rec-badge {
+  font-size: 0.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.1rem 0.4rem;
+  border-radius: 20px;
+  background: #27ae60;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.pay-pick-green.active .pay-pick-rec-badge {
+  background: rgba(255,255,255,0.25);
+}
+
 /* ── Payment Card ── */
 .pay-card {
   background: #fff;
@@ -3166,6 +3229,54 @@ h3 {
 
 .pay-card:hover {
   box-shadow: 0 6px 32px rgba(31,111,235,0.11);
+}
+
+/* ── Card accordion toggle ── */
+.pay-card-toggle {
+  cursor: pointer;
+  width: 100%;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.pay-card-toggle:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: -3px;
+  border-radius: 18px;
+}
+
+.pay-card-chevron {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-left: auto;
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgba(31,111,235,0.06);
+  transition: background 0.2s ease;
+}
+
+.pay-card-toggle:hover .pay-card-chevron {
+  background: rgba(31,111,235,0.13);
+}
+
+/* ── Accordion collapse — CSS grid trick (no max-height jank) ── */
+.pay-card-collapsible {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.28s ease;
+}
+
+.pay-card-collapsible.open {
+  grid-template-rows: 1fr;
+}
+
+.pay-card-collapsible-inner {
+  overflow: hidden;
 }
 
 /* Card head */
@@ -3997,5 +4108,22 @@ h3 {
   .pay-cta-inner {
     padding: 1.5rem 1rem;
     border-radius: 16px;
+  }
+
+  /* Compact picker on small phones — stack icon + short label vertically */
+  .pay-method-pick-btn {
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.65rem 0.4rem;
+    font-size: 0.72rem;
+    border-radius: 12px;
+  }
+
+  .pay-method-pick-btn i {
+    font-size: 1rem;
+  }
+
+  .pay-pick-rec-badge {
+    display: none;
   }
 }

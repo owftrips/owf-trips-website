@@ -2908,7 +2908,7 @@ h3 {
   }
 
   .section {
-    padding: 3rem 0;
+    padding: 2.5rem 0;
   }
 
   .section-divider-wrap {
@@ -2995,7 +2995,7 @@ h3 {
 
   .footer-address {
     margin-top: 10px;
-    font-size: 10px;
+    font-size: 12px;
     line-height: 1.42;
     max-width: 98%;
   }
@@ -3006,7 +3006,7 @@ h3 {
   }
 
   .footer-contact-link {
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .footer-social {
@@ -3020,7 +3020,7 @@ h3 {
   }
 
   .footer-quick-title {
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .footer-quick-grid {
@@ -3029,7 +3029,7 @@ h3 {
   }
 
   .footer-quick-link {
-    font-size: 9px;
+    font-size: 11px;
   }
 
   .footer-social-link {
@@ -3050,7 +3050,7 @@ h3 {
 
   .footer-copy {
     margin-top: 8px;
-    font-size: 10px;
+    font-size: 11px;
   }
 
   .inner-page-banner {
@@ -3110,6 +3110,17 @@ h3 {
     height: 50px;
     font-size: 1.5rem;
   }
+
+  /* ── Typography scale-down for small phones ── */
+  h1 { font-size: 1.5rem; }   /* 24px — page/hero titles */
+  h2 { font-size: 1.25rem; }  /* 20px — section headings */
+  h3 { font-size: 1.05rem; }  /* 16.8px — card/sub headings */
+  .about-section-heading { font-size: 1.3rem; } /* clamp min was 1.5rem — bring down on phones */
+
+  /* ── About page fixes ── */
+  .about-mission-quote { font-size: 2rem; }             /* decorative " — was 3.5rem at 760px */
+  .about-mission-card { padding: 1.5rem 1.1rem; }       /* tighter card padding */
+  .about-values-grid-new { grid-template-columns: 1fr; } /* single column on phones */
 }
 
 /* ═══════════════════════════════════════════════════════════════

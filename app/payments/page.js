@@ -1,3 +1,4 @@
+import Image from "next/image";
 import InnerPageLayout from "../components/InnerPageLayout";
 import CopyButton from "../components/CopyButton";
 
@@ -51,10 +52,11 @@ export default function PaymentsPage() {
               <i className="fas fa-check-circle" aria-hidden="true"></i>
               No extra charges
             </span>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="https://owf-website-content.s3.ap-south-1.amazonaws.com/PaymentPage/Axis_Bank_logo_logotype.png"
+            <Image
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Axis_Bank_logo.svg/400px-Axis_Bank_logo.svg.png"
               alt="Axis Bank"
+              width={110}
+              height={30}
               className="pay-bank-logo"
             />
           </div>
@@ -142,6 +144,13 @@ export default function PaymentsPage() {
               <i className="fas fa-star" aria-hidden="true"></i>
               Recommended
             </span>
+            <Image
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/UPI-Logo-vector.svg/200px-UPI-Logo-vector.svg.png"
+              alt="UPI"
+              width={72}
+              height={24}
+              className="pay-upi-logo"
+            />
           </div>
         </div>
 

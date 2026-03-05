@@ -3290,12 +3290,22 @@ h3 {
   color: #f59e0b;
 }
 
-/* Bank logo */
+/* Bank / UPI logos */
 .pay-bank-logo {
-  height: 28px;
-  width: auto;
+  height: 30px !important;
+  width: auto !important;
+  max-width: 120px;
   object-fit: contain;
-  opacity: 0.9;
+  opacity: 0.88;
+  flex-shrink: 0;
+}
+
+.pay-upi-logo {
+  height: 24px !important;
+  width: auto !important;
+  max-width: 80px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 /* Card body */

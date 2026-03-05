@@ -14,255 +14,276 @@ export default function PaymentsPage() {
       breadcrumb="Payments"
       currentPage="payments"
     >
-      {/* ── Intro banner card ── */}
-      <div className="pay-intro-card">
-        <div className="pay-intro-icon">
-          <i className="fas fa-shield-alt" aria-hidden="true"></i>
+
+      {/* ── Trust bar ── */}
+      <div className="pay-trust-bar">
+        <div className="pay-trust-item">
+          <i className="fas fa-lock" aria-hidden="true"></i>
+          <span>256-bit SSL Secured</span>
         </div>
-        <div className="pay-intro-text">
-          <h2>Secure & Easy Payments</h2>
-          <p>
-            Choose your preferred payment method below. All transactions are
-            secured and your booking will be confirmed once we receive your
-            payment. For any queries, reach us on{" "}
-            <a href="tel:+918296966873">+91-8296966873</a>.
-          </p>
+        <div className="pay-trust-sep" aria-hidden="true"></div>
+        <div className="pay-trust-item">
+          <i className="fas fa-shield-alt" aria-hidden="true"></i>
+          <span>Verified Business</span>
+        </div>
+        <div className="pay-trust-sep" aria-hidden="true"></div>
+        <div className="pay-trust-item">
+          <i className="fas fa-bolt" aria-hidden="true"></i>
+          <span>Booking Confirmed on Receipt</span>
         </div>
       </div>
 
-      {/* ── Payment methods ── */}
-      <section className="pay-methods-section">
-        <div className="pay-methods-grid">
-
-          {/* ── Card 1: Bank Transfer ── */}
-          <div className="pay-method-card">
-            <div className="pay-method-header pay-method-header-bank">
-              <div className="pay-method-header-icon">
-                <i className="fas fa-university" aria-hidden="true"></i>
-              </div>
-              <div>
-                <h3>Bank Transfer / NEFT / RTGS</h3>
-                <p>Direct transfer to our Axis Bank account</p>
-              </div>
-            </div>
-            <div className="pay-method-body">
-              {/* Axis Bank logo */}
-              <div className="pay-bank-logo-wrap">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://owf-website-content.s3.ap-south-1.amazonaws.com/PaymentPage/Axis_Bank_logo_logotype.png"
-                  alt="Axis Bank"
-                  className="pay-bank-logo"
-                />
-              </div>
-
-              <div className="pay-detail-rows">
-                <div className="pay-detail-row">
-                  <span className="pay-detail-label">
-                    <i className="fas fa-hashtag" aria-hidden="true"></i>
-                    Account Number
-                  </span>
-                  <div className="pay-detail-value-wrap">
-                    <span className="pay-detail-value">917010060901712</span>
-                    <CopyButton text="917010060901712" label="Account No." />
-                  </div>
-                </div>
-                <div className="pay-detail-row">
-                  <span className="pay-detail-label">
-                    <i className="fas fa-user" aria-hidden="true"></i>
-                    Account Name
-                  </span>
-                  <div className="pay-detail-value-wrap">
-                    <span className="pay-detail-value">Shivam Gupta</span>
-                    <CopyButton text="Shivam Gupta" label="Name" />
-                  </div>
-                </div>
-                <div className="pay-detail-row">
-                  <span className="pay-detail-label">
-                    <i className="fas fa-code-branch" aria-hidden="true"></i>
-                    IFSC Code
-                  </span>
-                  <div className="pay-detail-value-wrap">
-                    <span className="pay-detail-value">UTIB0000102</span>
-                    <CopyButton text="UTIB0000102" label="IFSC" />
-                  </div>
-                </div>
-                <div className="pay-detail-row">
-                  <span className="pay-detail-label">
-                    <i className="fas fa-building" aria-hidden="true"></i>
-                    Bank &amp; Branch
-                  </span>
-                  <div className="pay-detail-value-wrap">
-                    <span className="pay-detail-value">
-                      Axis Bank, Marathahalli Branch, Bangalore
-                    </span>
-                  </div>
-                </div>
-                <div className="pay-detail-row">
-                  <span className="pay-detail-label">
-                    <i className="fas fa-wallet" aria-hidden="true"></i>
-                    Account Type
-                  </span>
-                  <div className="pay-detail-value-wrap">
-                    <span className="pay-detail-value">Savings</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="pay-method-tip">
-                <i className="fas fa-info-circle" aria-hidden="true"></i>
-                After transferring, share your payment screenshot on{" "}
-                <a
-                  href="https://wa.me/message/ZLIG4WNMOLF2P1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  WhatsApp
-                </a>{" "}
-                or email us at{" "}
-                <a href="mailto:bookings@owftrips.in">bookings@owftrips.in</a>.
-              </div>
+      {/* ═══════════════════════════════════════
+          METHOD 01 — BANK TRANSFER
+      ═══════════════════════════════════════ */}
+      <div className="pay-card" id="bank-transfer">
+        {/* Card header */}
+        <div className="pay-card-head">
+          <div className="pay-card-head-left">
+            <span className="pay-card-num">01</span>
+            <div>
+              <h3 className="pay-card-title">Bank Transfer</h3>
+              <p className="pay-card-subtitle">NEFT &middot; RTGS &middot; IMPS</p>
             </div>
           </div>
-
-          {/* ── Card 2: UPI ── */}
-          <div className="pay-method-card">
-            <div className="pay-method-header pay-method-header-upi">
-              <div className="pay-method-header-icon">
-                <i className="fas fa-mobile-alt" aria-hidden="true"></i>
-              </div>
-              <div>
-                <h3>UPI Payment</h3>
-                <p>Instant transfer via any UPI app</p>
-              </div>
-            </div>
-            <div className="pay-method-body">
-              <div className="pay-upi-apps">
-                <span className="pay-upi-app-tag">
-                  <i className="fas fa-check-circle" aria-hidden="true"></i>
-                  Google Pay
-                </span>
-                <span className="pay-upi-app-tag">
-                  <i className="fas fa-check-circle" aria-hidden="true"></i>
-                  PhonePe
-                </span>
-                <span className="pay-upi-app-tag">
-                  <i className="fas fa-check-circle" aria-hidden="true"></i>
-                  Paytm
-                </span>
-                <span className="pay-upi-app-tag">
-                  <i className="fas fa-check-circle" aria-hidden="true"></i>
-                  BHIM &amp; others
-                </span>
-              </div>
-
-              <div className="pay-detail-rows">
-                <div className="pay-detail-row">
-                  <span className="pay-detail-label">
-                    <i className="fas fa-at" aria-hidden="true"></i>
-                    UPI ID
-                  </span>
-                  <div className="pay-detail-value-wrap">
-                    <span className="pay-detail-value pay-detail-upi">
-                      owftrips@ybl
-                    </span>
-                    <CopyButton text="owftrips@ybl" label="UPI ID" />
-                  </div>
-                </div>
-                <div className="pay-detail-row">
-                  <span className="pay-detail-label">
-                    <i className="fas fa-user" aria-hidden="true"></i>
-                    Registered Name
-                  </span>
-                  <div className="pay-detail-value-wrap">
-                    <span className="pay-detail-value">Shivam Gupta</span>
-                    <CopyButton text="Shivam Gupta" label="Name" />
-                  </div>
-                </div>
-              </div>
-
-              <div className="pay-upi-steps">
-                <p className="pay-upi-steps-title">How to pay via UPI:</p>
-                <ol className="pay-upi-step-list">
-                  <li>Open your UPI app (GPay, PhonePe, Paytm, etc.)</li>
-                  <li>Choose &ldquo;Send Money&rdquo; or &ldquo;Pay via UPI ID&rdquo;</li>
-                  <li>Enter UPI ID: <strong>owftrips@ybl</strong></li>
-                  <li>Enter the amount and complete payment</li>
-                  <li>Share the screenshot with us on WhatsApp</li>
-                </ol>
-              </div>
-
-              <div className="pay-method-tip">
-                <i className="fas fa-info-circle" aria-hidden="true"></i>
-                Verify the name shows <strong>Shivam Gupta</strong> before
-                confirming your payment.
-              </div>
-            </div>
+          <div className="pay-card-head-right">
+            <span className="pay-tag-free">
+              <i className="fas fa-check-circle" aria-hidden="true"></i>
+              No extra charges
+            </span>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://owf-website-content.s3.ap-south-1.amazonaws.com/PaymentPage/Axis_Bank_logo_logotype.png"
+              alt="Axis Bank"
+              className="pay-bank-logo"
+            />
           </div>
-
-          {/* ── Card 3: Razorpay / Credit Card ── */}
-          <div className="pay-method-card">
-            <div className="pay-method-header pay-method-header-card">
-              <div className="pay-method-header-icon">
-                <i className="fas fa-credit-card" aria-hidden="true"></i>
-              </div>
-              <div>
-                <h3>Credit / Debit Card</h3>
-                <p>Powered by Razorpay — all major cards accepted</p>
-              </div>
-            </div>
-            <div className="pay-method-body">
-              <div className="pay-card-brands">
-                <span className="pay-card-brand-tag">
-                  <i className="fab fa-cc-visa" aria-hidden="true"></i> Visa
-                </span>
-                <span className="pay-card-brand-tag">
-                  <i className="fab fa-cc-mastercard" aria-hidden="true"></i> Mastercard
-                </span>
-                <span className="pay-card-brand-tag">
-                  <i className="fab fa-cc-amex" aria-hidden="true"></i> Amex
-                </span>
-                <span className="pay-card-brand-tag">
-                  <i className="fas fa-university" aria-hidden="true"></i> Net Banking
-                </span>
-              </div>
-
-              <div className="pay-razorpay-highlight">
-                <i className="fas fa-bolt" aria-hidden="true"></i>
-                <div>
-                  <strong>Pay instantly via Razorpay</strong>
-                  <p>Secure checkout with 256-bit SSL encryption</p>
-                </div>
-              </div>
-
-              <div className="pay-gateway-note">
-                <i className="fas fa-exclamation-triangle" aria-hidden="true"></i>
-                <span>
-                  A <strong>3% payment gateway charge</strong> is applicable on
-                  card / online payments. This is a processing fee charged by
-                  the payment gateway.
-                </span>
-              </div>
-
-              <a
-                href="https://razorpay.me/@shivamgupta7"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="pay-razorpay-btn"
-              >
-                <i className="fas fa-lock" aria-hidden="true"></i>
-                Pay Securely via Razorpay
-              </a>
-            </div>
-          </div>
-
         </div>
-      </section>
 
-      {/* ── Payment Policy table ── */}
+        {/* Card body */}
+        <div className="pay-card-body">
+          {/* Account Number — hero element */}
+          <div className="pay-detail-block">
+            <span className="pay-detail-block-label">Account Number</span>
+            <div className="pay-detail-block-row">
+              <span className="pay-detail-block-num">917010060901712</span>
+              <CopyButton text="917010060901712" label="Copy" />
+            </div>
+          </div>
+
+          {/* IFSC */}
+          <div className="pay-detail-block">
+            <span className="pay-detail-block-label">IFSC Code</span>
+            <div className="pay-detail-block-row">
+              <span className="pay-detail-block-num">UTIB0000102</span>
+              <CopyButton text="UTIB0000102" label="Copy" />
+            </div>
+          </div>
+
+          {/* Secondary meta */}
+          <div className="pay-meta-grid">
+            <div className="pay-meta-item">
+              <span className="pay-meta-label">Account Name</span>
+              <span className="pay-meta-val">Shivam Gupta</span>
+            </div>
+            <div className="pay-meta-item">
+              <span className="pay-meta-label">Account Type</span>
+              <span className="pay-meta-val">Savings</span>
+            </div>
+            <div className="pay-meta-item pay-meta-item-wide">
+              <span className="pay-meta-label">Bank &amp; Branch</span>
+              <span className="pay-meta-val">
+                Axis Bank, Marathahalli Branch, Bangalore
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* Card footer */}
+        <div className="pay-card-foot">
+          <i className="fas fa-info-circle" aria-hidden="true"></i>
+          <span>
+            After transferring, share the payment screenshot on{" "}
+            <a
+              href="https://wa.me/message/ZLIG4WNMOLF2P1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              WhatsApp
+            </a>{" "}
+            or email{" "}
+            <a href="mailto:bookings@owftrips.in">bookings@owftrips.in</a> to
+            confirm your booking.
+          </span>
+        </div>
+      </div>
+
+      {/* ═══════════════════════════════════════
+          METHOD 02 — UPI
+      ═══════════════════════════════════════ */}
+      <div className="pay-card" id="upi">
+        {/* Card header */}
+        <div className="pay-card-head">
+          <div className="pay-card-head-left">
+            <span className="pay-card-num pay-card-num-green">02</span>
+            <div>
+              <h3 className="pay-card-title">UPI Payment</h3>
+              <p className="pay-card-subtitle">
+                GPay &middot; PhonePe &middot; Paytm &middot; BHIM &middot; Any UPI app
+              </p>
+            </div>
+          </div>
+          <div className="pay-card-head-right">
+            <span className="pay-tag-free">
+              <i className="fas fa-check-circle" aria-hidden="true"></i>
+              No extra charges
+            </span>
+            <span className="pay-tag-rec">
+              <i className="fas fa-star" aria-hidden="true"></i>
+              Recommended
+            </span>
+          </div>
+        </div>
+
+        {/* Card body */}
+        <div className="pay-card-body">
+          {/* UPI ID — hero element */}
+          <div className="pay-detail-block pay-detail-block-upi">
+            <span className="pay-detail-block-label">UPI ID</span>
+            <div className="pay-detail-block-row">
+              <span className="pay-detail-block-num pay-detail-block-upi-id">
+                owftrips@ybl
+              </span>
+              <CopyButton text="owftrips@ybl" label="Copy" />
+            </div>
+          </div>
+
+          {/* Verify name notice */}
+          <div className="pay-upi-verify">
+            <i className="fas fa-user-check" aria-hidden="true"></i>
+            <span>
+              When paying, verify the registered name shows{" "}
+              <strong>Shivam Gupta</strong> before confirming.
+            </span>
+          </div>
+
+          {/* How to pay steps */}
+          <div className="pay-steps">
+            <p className="pay-steps-title">How to pay via UPI</p>
+            <ol className="pay-steps-list">
+              <li>Open any UPI app (GPay, PhonePe, Paytm, BHIM&hellip;)</li>
+              <li>Tap &ldquo;Pay&rdquo; or &ldquo;Send Money&rdquo; → enter UPI ID</li>
+              <li>
+                Type <strong>owftrips@ybl</strong>, verify name:{" "}
+                <strong>Shivam Gupta</strong>
+              </li>
+              <li>Enter exact amount &amp; complete payment</li>
+              <li>Share the success screenshot with us on WhatsApp</li>
+            </ol>
+          </div>
+        </div>
+
+        <div className="pay-card-foot">
+          <i className="fas fa-info-circle" aria-hidden="true"></i>
+          <span>
+            UPI payments are processed instantly. Your booking will be
+            confirmed within minutes of receipt.
+          </span>
+        </div>
+      </div>
+
+      {/* ═══════════════════════════════════════
+          METHOD 03 — CREDIT / DEBIT CARD
+      ═══════════════════════════════════════ */}
+      <div className="pay-card" id="card-payment">
+        {/* Card header */}
+        <div className="pay-card-head">
+          <div className="pay-card-head-left">
+            <span className="pay-card-num pay-card-num-purple">03</span>
+            <div>
+              <h3 className="pay-card-title">Credit / Debit Card</h3>
+              <p className="pay-card-subtitle">
+                Powered by Razorpay &middot; 256-bit SSL encrypted
+              </p>
+            </div>
+          </div>
+          <div className="pay-card-head-right">
+            <span className="pay-tag-fee">
+              <i className="fas fa-info-circle" aria-hidden="true"></i>
+              3% gateway fee
+            </span>
+          </div>
+        </div>
+
+        {/* Card body */}
+        <div className="pay-card-body">
+          {/* Accepted cards */}
+          <div className="pay-accepted-cards">
+            <span className="pay-accepted-label">Accepted payments</span>
+            <div className="pay-accepted-row">
+              <span className="pay-accepted-item">
+                <i className="fab fa-cc-visa" aria-hidden="true"></i> Visa
+              </span>
+              <span className="pay-accepted-item">
+                <i className="fab fa-cc-mastercard" aria-hidden="true"></i> Mastercard
+              </span>
+              <span className="pay-accepted-item">
+                <i className="fab fa-cc-amex" aria-hidden="true"></i> Amex
+              </span>
+              <span className="pay-accepted-item">
+                <i className="fab fa-cc-rupay" aria-hidden="true"></i> RuPay
+              </span>
+              <span className="pay-accepted-item">
+                <i className="fas fa-university" aria-hidden="true"></i> Net Banking
+              </span>
+            </div>
+          </div>
+
+          {/* Gateway notice */}
+          <div className="pay-gateway-banner">
+            <div className="pay-gateway-banner-icon">
+              <i className="fas fa-exclamation-triangle" aria-hidden="true"></i>
+            </div>
+            <p>
+              A <strong>3% payment gateway charge</strong> is added on top of
+              the trip cost when paying by card or net banking. This fee is
+              charged by the payment processor and is non-refundable.
+            </p>
+          </div>
+
+          {/* Razorpay CTA */}
+          <a
+            href="https://razorpay.me/@shivamgupta7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="pay-razorpay-cta"
+          >
+            <span className="pay-razorpay-cta-lock">
+              <i className="fas fa-lock" aria-hidden="true"></i>
+            </span>
+            <span className="pay-razorpay-cta-text">
+              Pay Securely via Razorpay
+            </span>
+            <span className="pay-razorpay-cta-arrow">
+              <i className="fas fa-arrow-right" aria-hidden="true"></i>
+            </span>
+          </a>
+        </div>
+
+        <div className="pay-card-foot">
+          <i className="fas fa-info-circle" aria-hidden="true"></i>
+          <span>
+            You will be redirected to Razorpay&rsquo;s secure checkout page.
+            After payment, send us the transaction ID on WhatsApp.
+          </span>
+        </div>
+      </div>
+
+      {/* ── Payment Schedule ── */}
       <section className="pay-policy-section">
         <div className="pay-section-label">
-          <i className="fas fa-file-invoice-dollar" aria-hidden="true"></i> Payment Policy
+          <i className="fas fa-file-invoice-dollar" aria-hidden="true"></i>{" "}
+          Payment Policy
         </div>
         <h2 className="pay-section-heading">Payment Schedule</h2>
 
@@ -319,10 +340,11 @@ export default function PaymentsPage() {
         </div>
       </section>
 
-      {/* ── Important Notes (red) ── */}
+      {/* ── Important Notes ── */}
       <section className="pay-important-section">
         <div className="pay-section-label pay-section-label-red">
-          <i className="fas fa-exclamation-triangle" aria-hidden="true"></i> Important Notes
+          <i className="fas fa-exclamation-triangle" aria-hidden="true"></i>{" "}
+          Important Notes
         </div>
         <h2 className="pay-section-heading">Please read before paying</h2>
 
@@ -331,33 +353,31 @@ export default function PaymentsPage() {
             <i className="fas fa-times-circle" aria-hidden="true"></i>
             <span>
               <strong>Never pay to an unknown account.</strong> Always verify
-              the account number and name before transferring money. OWF Trips
-              will never ask you to pay to a different account via WhatsApp or
-              SMS.
+              the account number and name before transferring. OWF Trips will
+              never ask you to pay to a different account via WhatsApp or SMS.
             </span>
           </div>
           <div className="policy-note-item">
             <i className="fas fa-times-circle" aria-hidden="true"></i>
             <span>
               <strong>Share payment proof.</strong> After making any payment,
-              always share the receipt/screenshot with us on WhatsApp or via
-              email for confirmation.
+              always share the receipt or screenshot with us on WhatsApp or
+              email for booking confirmation.
             </span>
           </div>
           <div className="policy-note-item">
             <i className="fas fa-times-circle" aria-hidden="true"></i>
             <span>
-              <strong>No cash payments.</strong> OWF Trips does not accept cash
-              payments. All transactions must be made through the payment
-              methods listed above.
+              <strong>No cash payments.</strong> OWF Trips does not accept
+              cash. All transactions must go through the methods listed above.
             </span>
           </div>
           <div className="policy-note-item">
             <i className="fas fa-times-circle" aria-hidden="true"></i>
             <span>
-              <strong>Cancellation &amp; refund.</strong> Please refer to our{" "}
-              <a href="/cancellation-policy">Cancellation Policy</a> for details
-              on refunds and cancellations.
+              <strong>Cancellations &amp; refunds.</strong> Please refer to our{" "}
+              <a href="/cancellation-policy">Cancellation Policy</a> for full
+              details.
             </span>
           </div>
         </div>
@@ -369,8 +389,8 @@ export default function PaymentsPage() {
           <div className="pay-cta-text">
             <h2>Need help with payment?</h2>
             <p>
-              Our team is available 11:30 AM – 9:30 PM, Mon–Sun. Reach out to
-              us instantly on WhatsApp or drop us an email.
+              Our team is available 11:30 AM – 9:30 PM, Mon–Sun. Reach us
+              instantly on WhatsApp or drop an email.
             </p>
           </div>
           <div className="pay-cta-actions">

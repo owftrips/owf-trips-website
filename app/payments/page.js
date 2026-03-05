@@ -95,7 +95,7 @@ export default function PaymentsPage() {
             <div className="pay-meta-item pay-meta-item-wide">
               <span className="pay-meta-label">Bank &amp; Branch</span>
               <span className="pay-meta-val">
-                Axis Bank, Marathahalli Branch, Bangalore
+                Axis Bank, Banashakari Branch, Bangalore
               </span>
             </div>
           </div>

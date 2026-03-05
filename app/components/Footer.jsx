@@ -7,7 +7,7 @@ const quickLinks = [
   { label: "Cancellation Policy", href: "/cancellation-policy" },
   { label: "Terms & Conditions", href: "/terms-and-conditions" },
   { label: "Disclaimer", href: "/disclaimer" },
-  { label: "Payments", href: "/#payments" },
+  { label: "Payments", href: "/payments" },
 ];
 
 const socialLinks = [

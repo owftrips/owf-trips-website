@@ -47,7 +47,7 @@ export default function TermsAndConditionsPage() {
       {/* Intro card */}
       <div className="policy-intro-card">
         <div className="policy-intro-icon">
-          <i className="fas fa-file-contract" aria-hidden="true"></i>
+          <i className="fas fa-handshake" aria-hidden="true"></i>
         </div>
         <div className="policy-intro-text">
           <p>

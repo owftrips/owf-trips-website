@@ -736,7 +736,7 @@ export default function TermsAndConditionsPage() {
               {/* Payment Policy Table */}
               <div className="policy-table-block">
                 <h3 className="policy-table-title">
-                  <i className="fas fa-rupee-sign" aria-hidden="true"></i>
+                  <i className="fas fa-file-invoice-dollar" aria-hidden="true"></i>
                   Payment Policy
                 </h3>
                 <div className="policy-table-wrap">

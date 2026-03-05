@@ -289,65 +289,81 @@ export default function PaymentsPage() {
       </div>
 
       {/* ── Payment Schedule ── */}
-      <section className="pay-policy-section">
-        <div className="pay-section-label">
-          <i className="fas fa-file-invoice-dollar" aria-hidden="true"></i>{" "}
-          Payment Policy
-        </div>
-        <h2 className="pay-section-heading">Payment Schedule</h2>
-
-        <div className="policy-table-wrap">
-          <table className="policy-table">
-            <thead>
-              <tr>
-                <th>Payment Stage</th>
-                <th>Amount Due</th>
-                <th>When</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Booking Confirmation</td>
-                <td>
-                  <span className="policy-table-tag">25% of total cost</span>
-                </td>
-                <td>At the time of booking</td>
-              </tr>
-              <tr>
-                <td>Partial Payment</td>
-                <td>
-                  <span className="policy-table-tag">50% of total cost</span>
-                </td>
-                <td>30 days before departure</td>
-              </tr>
-              <tr>
-                <td>Full Payment</td>
-                <td>
-                  <span className="policy-table-tag">100% of total cost</span>
-                </td>
-                <td>15 days before departure</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <div className="policy-note-box">
-          <div className="policy-note-item">
-            <i className="fas fa-info-circle" aria-hidden="true"></i>
-            <span>
-              For bookings made within <strong>15 days of departure</strong>,
-              full payment is required at the time of booking.
-            </span>
+      <div className="pay-card pay-policy-section" id="payment-schedule">
+        {/* Card header */}
+        <div className="pay-card-head">
+          <div className="pay-card-head-left">
+            <div className="pay-schedule-icon">
+              <i className="fas fa-file-invoice-dollar" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h2 className="pay-card-title">Payment Schedule</h2>
+              <p className="pay-card-subtitle">Payment Policy &middot; 3 Simple Stages</p>
+            </div>
           </div>
-          <div className="policy-note-item">
-            <i className="fas fa-info-circle" aria-hidden="true"></i>
-            <span>
-              Failure to make payments on time may result in automatic
-              cancellation of your booking without a refund of the deposit.
+          <div className="pay-card-head-right">
+            <span className="pay-tag-free">
+              <i className="fas fa-calendar-check" aria-hidden="true"></i>
+              Flexible payment stages
             </span>
           </div>
         </div>
-      </section>
+
+        {/* Card body */}
+        <div className="pay-card-body">
+          <div className="policy-table-wrap">
+            <table className="policy-table">
+              <thead>
+                <tr>
+                  <th>Payment Stage</th>
+                  <th>Amount Due</th>
+                  <th>When</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Booking Confirmation</td>
+                  <td>
+                    <span className="policy-table-tag">25% of total cost</span>
+                  </td>
+                  <td>At the time of booking</td>
+                </tr>
+                <tr>
+                  <td>Partial Payment</td>
+                  <td>
+                    <span className="policy-table-tag">50% of total cost</span>
+                  </td>
+                  <td>30 days before departure</td>
+                </tr>
+                <tr>
+                  <td>Full Payment</td>
+                  <td>
+                    <span className="policy-table-tag">100% of total cost</span>
+                  </td>
+                  <td>15 days before departure</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="policy-note-box">
+            <div className="policy-note-item">
+              <i className="fas fa-info-circle" aria-hidden="true"></i>
+              <span>
+                For bookings made within <strong>15 days of departure</strong>,
+                full payment is required at the time of booking.
+              </span>
+            </div>
+            <div className="policy-note-item">
+              <i className="fas fa-info-circle" aria-hidden="true"></i>
+              <span>
+                Failure to make payments on time may result in automatic
+                cancellation of your booking without a refund of the deposit.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* ── Important Notes ── */}
       <section className="pay-important-section">

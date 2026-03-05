@@ -3111,6 +3111,11 @@ h3 {
     font-size: 1.5rem;
   }
 
+  /* ── Policy table — remove min-width so it fits phone screens ── */
+  .policy-table { min-width: 0; font-size: 0.82rem; }
+  .policy-table thead th,
+  .policy-table tbody td { padding: 0.65rem 0.75rem; }
+
   /* ── Typography scale-down for small phones ── */
   h1 { font-size: 1.5rem; }   /* 24px — page/hero titles */
   h2 { font-size: 1.25rem; }  /* 20px — section headings */

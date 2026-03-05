@@ -351,43 +351,91 @@ export default function PaymentsPage() {
 
       {/* ── Important Notes ── */}
       <section className="pay-important-section">
-        <div className="pay-section-label pay-section-label-red">
-          <i className="fas fa-exclamation-triangle" aria-hidden="true"></i>{" "}
-          Important Notes
-        </div>
-        <h2 className="pay-section-heading">Please read before paying</h2>
+        <div className="pay-notes-card">
 
-        <div className="policy-note-box-red">
-          <div className="policy-note-item">
-            <i className="fas fa-times-circle" aria-hidden="true"></i>
-            <span>
-              <strong>Never pay to an unknown account.</strong> Always verify
-              the account number and name before transferring. OWF Trips will
-              never ask you to pay to a different account via WhatsApp or SMS.
-            </span>
+          {/* Card header */}
+          <div className="pay-notes-head">
+            <div className="pay-notes-head-icon">
+              <i className="fas fa-shield-alt" aria-hidden="true"></i>
+            </div>
+            <div>
+              <h3 className="pay-notes-title">Important Notes</h3>
+              <p className="pay-notes-subtitle">
+                Please read carefully before making a payment
+              </p>
+            </div>
           </div>
-          <div className="policy-note-item">
-            <i className="fas fa-times-circle" aria-hidden="true"></i>
-            <span>
-              <strong>Share payment proof.</strong> After making any payment,
-              always share the receipt or screenshot with us on WhatsApp or
-              email for booking confirmation.
-            </span>
-          </div>
-          <div className="policy-note-item">
-            <i className="fas fa-times-circle" aria-hidden="true"></i>
-            <span>
-              <strong>No cash payments.</strong> OWF Trips does not accept
-              cash. All transactions must go through the methods listed above.
-            </span>
-          </div>
-          <div className="policy-note-item">
-            <i className="fas fa-times-circle" aria-hidden="true"></i>
-            <span>
-              <strong>Cancellations &amp; refunds.</strong> Please refer to our{" "}
-              <a href="/cancellation-policy">Cancellation Policy</a> for full
-              details.
-            </span>
+
+          {/* Note items */}
+          <div className="pay-notes-list">
+
+            <div className="pay-note-row">
+              <div className="pay-note-row-icon pay-note-icon-red">
+                <i className="fas fa-ban" aria-hidden="true"></i>
+              </div>
+              <div className="pay-note-row-body">
+                <strong>Never pay to an unknown account</strong>
+                <p>
+                  Always verify the account number and registered name before
+                  transferring. OWF Trips will <em>never</em> ask you to pay to
+                  a different account via WhatsApp, SMS, or phone call.
+                </p>
+              </div>
+            </div>
+
+            <div className="pay-note-row">
+              <div className="pay-note-row-icon pay-note-icon-blue">
+                <i className="fas fa-camera" aria-hidden="true"></i>
+              </div>
+              <div className="pay-note-row-body">
+                <strong>Share your payment screenshot</strong>
+                <p>
+                  After every payment, share the transaction receipt or
+                  screenshot with us on{" "}
+                  <a
+                    href="https://wa.me/message/ZLIG4WNMOLF2P1"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WhatsApp
+                  </a>{" "}
+                  or email{" "}
+                  <a href="mailto:bookings@owftrips.in">
+                    bookings@owftrips.in
+                  </a>{" "}
+                  to confirm your booking.
+                </p>
+              </div>
+            </div>
+
+            <div className="pay-note-row">
+              <div className="pay-note-row-icon pay-note-icon-orange">
+                <i className="fas fa-money-bill-wave" aria-hidden="true"></i>
+              </div>
+              <div className="pay-note-row-body">
+                <strong>No cash payments accepted</strong>
+                <p>
+                  OWF Trips does not accept cash under any circumstances. All
+                  bookings must be paid through the secure methods listed above.
+                </p>
+              </div>
+            </div>
+
+            <div className="pay-note-row pay-note-row-last">
+              <div className="pay-note-row-icon pay-note-icon-teal">
+                <i className="fas fa-undo-alt" aria-hidden="true"></i>
+              </div>
+              <div className="pay-note-row-body">
+                <strong>Cancellations &amp; refunds</strong>
+                <p>
+                  Refund eligibility depends on the timing of cancellation.
+                  Please review our{" "}
+                  <a href="/cancellation-policy">Cancellation Policy</a> for
+                  full details on refund timelines and conditions.
+                </p>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

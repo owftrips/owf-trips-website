@@ -6,6 +6,10 @@ const nextConfig = {
         source: "/campaign-ad-winter-spiti-2026",
         destination: "/campaign-ad-winter-spiti-2026/index.html",
       },
+      {
+        source: "/campaign-ad-winter-spiti-2026/",
+        destination: "/campaign-ad-winter-spiti-2026/index.html",
+      },
     ];
   },
   images: {

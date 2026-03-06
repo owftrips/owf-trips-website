@@ -146,6 +146,21 @@
       height: clamp(14px, 3.8vw, 18px);
       flex: 0 0 auto;
     }
+    @keyframes phone-ring {
+      0%,  72%, 100% { transform: rotate(0deg); }
+      8%             { transform: rotate(-18deg); }
+      16%            { transform: rotate(18deg); }
+      24%            { transform: rotate(-14deg); }
+      32%            { transform: rotate(14deg); }
+      40%            { transform: rotate(-9deg); }
+      48%            { transform: rotate(9deg); }
+      56%            { transform: rotate(-4deg); }
+      64%            { transform: rotate(4deg); }
+    }
+    .cta-call svg {
+      animation: phone-ring 2s ease-in-out infinite;
+      transform-origin: center;
+    }
     .cta-enquire {
       min-height: clamp(44px, 5vw, 54px);
       background: var(--enquire);
@@ -1326,8 +1341,13 @@
     <a class="cta-btn cta-enquire" href="#" id="openEnquiry">Enquire Now</a>
     <div class="cta-row">
       <a class="cta-btn cta-call" href="tel:+919102013111" aria-label="Call now">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 118.72" aria-hidden="true">
-          <path fill="currentColor" d="M29.22,56.54c3.57,6.43,7.67,12.6,13.02,18.24C47.58,80.45,54.24,85.6,62.86,90c0.64,0.31,1.25,0.31,1.78,0.1c0.82-0.31,1.66-0.99,2.48-1.81c0.64-0.64,1.43-1.66,2.26-2.77c3.31-4.36,7.42-9.77,13.21-7.07c0.13,0.06,0.23,0.13,0.35,0.19l19.33,11.11c0.06,0.03,0.13,0.1,0.19,0.13c2.55,1.75,3.6,4.46,3.63,7.52c0,3.12-1.15,6.63-2.83,9.58c-2.22,3.91-5.51,6.5-9.29,8.21c-3.6,1.66-7.61,2.55-11.46,3.12c-6.05,0.89-11.71,0.32-17.5-1.46c-5.67-1.75-11.37-4.65-17.6-8.5l-0.46-0.29c-2.86-1.78-5.95-3.7-8.98-5.95c-11.1-8.38-22.4-20.47-29.76-33.78C2.03,57.15-1.34,45.09,0.5,33.59c1.02-6.3,3.72-12.03,8.44-15.82c4.11-3.31,9.64-5.13,16.81-4.49c0.82,0.06,1.56,0.54,1.94,1.24l12.39,20.94c1.81,2.35,2.04,4.68,1.05,7.01c-0.82,1.91-2.48,3.67-4.74,5.31c-0.67,0.57-1.46,1.15-2.29,1.75c-2.77,2.01-5.92,4.33-4.84,7.07L29.22,56.54z"/>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <!-- Handset -->
+          <path fill="currentColor" d="M6.6 10.8a15.4 15.4 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11 11 0 0 0 3.5.57 1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C10.85 22 2 13.15 2 2a1 1 0 0 1 1-1h4.5a1 1 0 0 1 1 1c0 1.22.2 2.4.57 3.5a1 1 0 0 1-.25 1L6.6 10.8z"/>
+          <!-- Signal arc outer -->
+          <path stroke="currentColor" stroke-width="1.7" stroke-linecap="round" fill="none" d="M15 1.5a9 9 0 0 1 7.5 8.86"/>
+          <!-- Signal arc inner -->
+          <path stroke="currentColor" stroke-width="1.7" stroke-linecap="round" fill="none" d="M15 5a5.5 5.5 0 0 1 4.5 5.4"/>
         </svg>
         <span>Call Now</span>
       </a>

@@ -11,7 +11,7 @@ export default function Header({ currentPage = "home" }) {
     { label: "Home", href: "/", page: "home" },
     { label: "Group Trips", href: "/#group-trips", page: null },
     { label: "Customized Trips", href: "/#customized-trips", page: null },
-    { label: "Payments", href: "/#payments", page: null },
+    { label: "Payments", href: "/payments", page: "payments" },
     { label: "About Us", href: "/about", page: "about" },
   ];
 

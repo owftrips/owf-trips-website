@@ -1,0 +1,1847 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- FIX 1: Meaningful page title (was "Mobile CTA Component") -->
+  <title>Winter Spiti 2026 | OWF Trips</title>
+  <!-- FIX 2: Meta description + Open Graph tags for social/ad sharing -->
+  <meta name="description" content="Experience the magic of Winter Spiti with OWF Trips. 7-day backpacking adventure starting ₹19,900. Frozen rivers, ancient monasteries &amp; breathtaking Himalayan landscapes.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Winter Spiti 2026 | OWF Trips">
+  <meta property="og:description" content="Experience the magic of Winter Spiti with OWF Trips. 7-day backpacking adventure starting ₹19,900. Frozen rivers, ancient monasteries & breathtaking Himalayan landscapes.">
+  <meta property="og:image" content="https://owf-website-content.s3.ap-south-1.amazonaws.com/people-holding-hands-as-sign-peace-with-mountains-background-winter.jpg">
+  <meta property="og:site_name" content="OWF Trips">
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1102587028413438');
+    fbq('track', 'PageView');
+    /* FIX 7: ViewContent now includes content data for ad optimisation */
+    fbq('track', 'ViewContent', {
+      content_name: 'Winter Spiti 2026',
+      content_category: 'Group Trip',
+      value: 19900,
+      currency: 'INR'
+    });
+  </script>
+  <!-- End Meta Pixel Code -->
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+    /* FIX 3: Removed @font-face for "Griggs" — it used local() only and would
+       silently fail for all users who don't have it installed. Georgia is used
+       as a reliable serif fallback in .spiti-tagline-title below. */
+    :root {
+      --enquire: #1ea0d3;
+      --call: #111318;
+      --chat: #2fd368;
+      --chat-icon: #111b21;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      overflow-x: hidden;
+      background: #ffffff;
+    }
+    body {
+      margin: 0;
+      background: #ffffff;
+      font-family: Arial, sans-serif;
+      padding: 24px 16px;
+    }
+    .cta-wrap {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0;
+      background: transparent;
+      border-radius: 0;
+    }
+    .video-wrap {
+      width: 100vw;
+      max-width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+    .video-wrap video {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 9;
+      background: #0e1319;
+    }
+    .trip-card {
+      background: transparent;
+      border-radius: 0;
+      padding: 6px 12px 10px;
+      text-align: center;
+    }
+    .trip-title {
+      margin: 0;
+      color: #1f4b5a;
+      font-size: clamp(22px, 3.6vw, 38px);
+      letter-spacing: 3px;
+      font-weight: 800;
+      font-family: "Trebuchet MS", "Segoe UI", Arial, sans-serif;
+      text-shadow: 0 2px 10px rgba(15, 96, 119, 0.2);
+      text-transform: uppercase;
+    }
+    .trip-price-row {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      gap: 10px;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      color: #565b60;
+      font-size: clamp(17px, 2.35vw, 30px);
+      font-weight: 600;
+    }
+    .trip-old-price {
+      color: #6d757d;
+      text-decoration: line-through;
+      text-decoration-thickness: 1px;
+      text-decoration-color: rgba(90, 98, 106, 0.65);
+      font-weight: 500;
+    }
+    .trip-new-price {
+      color: #3e4248;
+      font-size: clamp(25px, 3.4vw, 40px);
+      font-weight: 800;
+      font-style: italic;
+      line-height: 1;
+      font-family: Georgia, "Times New Roman", serif;
+    }
+    .deal-ribbon {
+      margin: 12px auto 0;
+      width: min(290px, 78%);
+      background: #234d57;
+      color: #f2eedc;
+      font-size: clamp(16px, 2vw, 24px);
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      line-height: 1;
+      padding: 12px 12px;
+      clip-path: polygon(0 11%, 50% 20%, 100% 11%, 100% 89%, 50% 80%, 0 89%);
+    }
+    .cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 700;
+      line-height: 1;
+      transition: transform 0.15s ease;
+      white-space: nowrap;
+    }
+    .cta-btn:hover {
+      transform: translateY(-1px);
+    }
+    .cta-btn svg {
+      width: clamp(14px, 3.8vw, 18px);
+      height: clamp(14px, 3.8vw, 18px);
+      flex: 0 0 auto;
+    }
+    .cta-enquire {
+      min-height: clamp(48px, 7vw, 64px);
+      background: var(--enquire);
+      color: #ffffff;
+      font-size: clamp(22px, 2.8vw, 34px);
+      box-shadow: 0 10px 22px rgba(10, 39, 67, 0.16);
+      margin-top: 16px;
+    }
+    .cta-row {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+    .cta-call,
+    .cta-chat {
+      min-height: clamp(44px, 6vw, 58px);
+      font-size: clamp(15px, 2.4vw, 28px);
+      padding: 0 8px;
+    }
+    .cta-call {
+      background: var(--call);
+      color: #fff;
+    }
+    .cta-chat {
+      background: var(--chat);
+      color: var(--chat-icon);
+    }
+    .package-section {
+      width: 100%;
+      margin: 30px auto 0;
+    }
+    .package-title {
+      margin: 0 0 12px;
+      color: #636a71;
+      font-size: clamp(24px, 4.6vw, 44px);
+      font-weight: 500;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+    }
+    .package-card {
+      border: 1.5px solid #cad5db;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #edf3f6;
+      box-shadow: 0 18px 36px rgba(30, 52, 70, 0.08);
+    }
+    .package-media {
+      position: relative;
+      overflow: hidden;
+    }
+    .package-media img {
+      width: 100%;
+      display: block;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+    .trending-tag {
+      position: absolute;
+      top: clamp(14px, 2.2vw, 24px);
+      left: clamp(14px, 2.2vw, 24px);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 26px;
+      border-radius: 999px;
+      background: #f6cd12;
+      color: #171717;
+      font-size: clamp(17px, 2vw, 30px);
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 700;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.14);
+    }
+    .trending-tag svg {
+      width: clamp(16px, 1.5vw, 26px);
+      height: clamp(16px, 1.5vw, 26px);
+      flex: 0 0 auto;
+    }
+    .package-content {
+      padding: clamp(18px, 2.2vw, 34px);
+    }
+    .package-duration {
+      margin: 0;
+      color: #2e363d;
+      font-size: clamp(18px, 2.2vw, 40px);
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .route-pill {
+      margin: 14px 0 18px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: #dbedf1;
+      color: #17313d;
+      font-size: clamp(14px, 1.9vw, 32px);
+      font-weight: 500;
+      white-space: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .route-pill::-webkit-scrollbar {
+      display: none;
+    }
+    .package-name {
+      margin: 0;
+      color: #161a1e;
+      font-size: clamp(22px, 4.5vw, 56px);
+      line-height: 1.26;
+      font-weight: 700;
+      letter-spacing: 0.3px;
+    }
+    .inclusion-grid {
+      margin-top: 18px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px 16px;
+    }
+    .inclusion-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #111213;
+      font-size: clamp(15px, 2.3vw, 30px);
+      font-weight: 500;
+    }
+    .inclusion-item svg {
+      width: clamp(24px, 1.9vw, 32px);
+      height: clamp(24px, 1.9vw, 32px);
+      flex: 0 0 auto;
+    }
+    .flights-line {
+      margin-top: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: #111213;
+    }
+    .flights-icon {
+      width: 1em;
+      height: 1em;
+      color: #de7d0c;
+      flex: 0 0 auto;
+    }
+    .flights-text {
+      color: #111213;
+    }
+    .flights-badge {
+      padding: 6px 11px;
+      border-radius: 999px;
+      background: #de7d0c;
+      color: #ffffff;
+      font-size: inherit;
+      font-weight: 500;
+      line-height: 1;
+    }
+    .package-footer {
+      margin-top: 20px;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .reviews-section {
+      margin-top: 30px;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 18px 10px 18px;
+      background: linear-gradient(180deg, #f8fbfd 0%, #eef5f9 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .reviews-section::before,
+    .reviews-section::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(1px);
+      pointer-events: none;
+    }
+    .reviews-section::before {
+      width: 180px;
+      height: 180px;
+      top: -90px;
+      right: -60px;
+      background: radial-gradient(circle at 35% 35%, rgba(18, 125, 157, 0.2), rgba(18, 125, 157, 0));
+    }
+    .reviews-section::after {
+      width: 130px;
+      height: 130px;
+      bottom: -70px;
+      left: -30px;
+      background: radial-gradient(circle at 60% 35%, rgba(47, 130, 182, 0.18), rgba(47, 130, 182, 0));
+    }
+    .reviews-heading-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      gap: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    .reviews-heading {
+      margin: 0;
+      color: #1f3b4a;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.4px;
+    }
+    .reviews-kicker {
+      margin: 0;
+      color: #607381;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .reviews-track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: minmax(300px, 86%);
+      gap: 12px;
+      overflow-x: auto;
+      padding: 2px 2px 8px;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      position: relative;
+      z-index: 1;
+    }
+    .reviews-track::-webkit-scrollbar {
+      display: none;
+    }
+    .review-card {
+      scroll-snap-align: start;
+      background: #ffffff;
+      border: 1px solid #d4e1e9;
+      border-radius: 16px;
+      padding: 12px;
+      box-shadow: 0 10px 24px rgba(16, 49, 68, 0.08);
+      display: grid;
+      gap: 10px;
+    }
+    .review-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .review-user {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+    .review-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 2px solid #0d6a85;
+      object-fit: cover;
+      flex: 0 0 auto;
+    }
+    .review-user-meta {
+      min-width: 0;
+    }
+    .review-user-name {
+      margin: 0;
+      color: #0f4e63;
+      font-size: 12px;
+      font-weight: 700;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .review-user-trip {
+      margin: 2px 0 0;
+      color: #6f7f89;
+      font-size: 10px;
+      font-weight: 600;
+    }
+    .review-rating {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #f0f7fb;
+      color: #0d6a85;
+      font-size: 10px;
+      font-weight: 700;
+      line-height: 1;
+      flex: 0 0 auto;
+    }
+    .review-rating svg {
+      width: 12px;
+      height: 12px;
+      color: #0d6a85;
+      flex: 0 0 auto;
+    }
+    .review-quote {
+      margin: 0;
+      color: #2c3942;
+      font-size: 12px;
+      line-height: 1.5;
+      font-weight: 500;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 6;
+      overflow: hidden;
+      word-break: break-word;
+    }
+    .review-card.is-expanded .review-quote {
+      display: block;
+      -webkit-line-clamp: unset;
+      overflow: visible;
+    }
+    .review-toggle {
+      justify-self: start;
+      border: 0;
+      background: transparent;
+      color: #0f6e88;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.1;
+      padding: 0;
+      margin-top: -2px;
+      cursor: pointer;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+    .review-toggle.is-hidden {
+      display: none;
+    }
+    .review-media-strip {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 6px;
+    }
+    .review-media {
+      overflow: hidden;
+      border-radius: 8px;
+      border: 1px solid #d2dfe7;
+      background: #fff;
+      aspect-ratio: 4 / 3;
+    }
+    .review-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .gallery-section {
+      margin-top: 26px;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding: 0;
+      background: #ffffff;
+    }
+    .gallery-viewport {
+      padding: 0;
+      perspective: 900px;
+      perspective-origin: center center;
+    }
+    .gallery-track {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: 88vw;
+      gap: 2px;
+      overflow-x: auto;
+      padding: 0;
+      scroll-snap-type: none;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+      scroll-behavior: auto;
+    }
+    .gallery-track::-webkit-scrollbar {
+      display: none;
+    }
+    .gallery-card {
+      position: relative;
+      scroll-snap-align: none;
+      transition: transform 180ms ease, filter 180ms ease;
+      border-radius: 0;
+      overflow: hidden;
+      background: #ffffff;
+      box-shadow: none;
+      border: 0;
+      aspect-ratio: 4 / 5;
+      transform-origin: center center;
+      will-change: transform, filter;
+    }
+    .gallery-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .faq-section {
+      margin-top: 18px;
+      width: 100%;
+    }
+    .faq-link-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      width: 100%;
+      text-decoration: none;
+      border-radius: 14px;
+      padding: 14px 16px;
+      background: linear-gradient(135deg, #e8f7fd 0%, #d6eef8 100%);
+      border: 1px solid #b9dbe8;
+      box-shadow: 0 10px 22px rgba(15, 79, 102, 0.12);
+    }
+    .faq-copy {
+      min-width: 0;
+    }
+    .faq-title {
+      margin: 0;
+      color: #0d5f77;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .faq-sub {
+      margin: 4px 0 0;
+      color: #295768;
+      font-size: 12px;
+      font-weight: 500;
+      line-height: 1.3;
+    }
+    .faq-arrow {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #0f6e88;
+      color: #e9f9ff;
+      flex: 0 0 auto;
+    }
+    .faq-arrow svg {
+      width: 17px;
+      height: 17px;
+      display: block;
+    }
+    .spiti-tagline {
+      margin-top: 10px;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      background: #ffffff;
+      padding: 24px 14px 20px;
+    }
+    .spiti-tagline-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .spiti-tagline-title {
+      margin: 0;
+      color: #a9cbd4;
+      /* FIX 4: Replaced "Griggs" (local-only, unreliable) with Georgia serif */
+      font-family: Georgia, "Times New Roman", serif;
+      font-style: italic;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      font-size: 30px;
+      line-height: 0.95;
+    }
+    .spiti-tagline-sub {
+      margin: 8px 0 0;
+      color: #a4c3cd;
+      font-family: "Roboto", Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 400;
+      font-style: normal;
+      line-height: 1.16;
+      letter-spacing: 0.2px;
+    }
+    .site-footer {
+      background-color: rgb(17 32 35);
+      font-family: "Roboto", Arial, sans-serif;
+      padding: 0 16px 14px;
+      text-align: center;
+      width: 100vw;
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      margin-top: 16px;
+      color: #e9eef2;
+      position: relative;
+    }
+    .footer-accent-bar {
+      height: 5px;
+      background: linear-gradient(90deg, #1f6feb 0%, #11b0ce 50%, #134ea8 100%);
+      margin-bottom: 26px;
+    }
+    .footer-inner {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .footer-company {
+      margin: 0;
+      font-size: clamp(18px, 2.1vw, 28px);
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+    }
+    .footer-address {
+      margin: 8px auto 0;
+      max-width: 92%;
+      color: #d2dde4;
+      font-size: clamp(11px, 1vw, 16px);
+      line-height: 1.5;
+      font-weight: 400;
+    }
+    .footer-contact-row {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .footer-contact-link {
+      color: #d6e1e8;
+      text-decoration: none;
+      font-size: clamp(11px, 1vw, 15px);
+      font-weight: 400;
+      transition: color 0.2s ease;
+    }
+    .footer-contact-link:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+    .footer-quick-links {
+      margin-top: 10px;
+    }
+    .footer-quick-title {
+      margin: 0;
+      color: #e6edf4;
+      font-size: clamp(12px, 1.05vw, 15px);
+      font-weight: 600;
+    }
+    .footer-quick-grid {
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 6px 12px;
+    }
+    .footer-quick-link {
+      color: #c9d8e2;
+      text-decoration: none;
+      font-size: clamp(10px, 0.9vw, 13px);
+      font-weight: 400;
+      transition: color 0.2s ease;
+    }
+    .footer-quick-link:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+    .footer-social {
+      margin: 12px auto 0;
+      width: min(92%, 520px);
+      border-radius: 999px;
+      padding: 8px 8px;
+      background: rgba(175, 194, 206, 0.14);
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+    }
+    .footer-social-link {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      background: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(4, 17, 24, 0.28);
+      transition: transform 0.2s ease;
+    }
+    .footer-social-link:hover {
+      transform: scale(1.12);
+    }
+    .footer-social-icon {
+      width: 21px;
+      height: 21px;
+      display: block;
+    }
+    .footer-skyline {
+      margin-top: 12px;
+      height: 62px;
+      border-bottom: 2px solid rgba(228, 237, 242, 0.46);
+      background: url("https://owf-website-content.s3.ap-south-1.amazonaws.com/footer-mobile.avif") center bottom / contain no-repeat;
+      opacity: 0.95;
+    }
+    .footer-copy {
+      margin: 8px 0 0;
+      color: #d5e0e7;
+      font-size: clamp(10px, 0.9vw, 14px);
+      font-weight: 400;
+      line-height: 1.4;
+    }
+    .price-title {
+      margin: 0;
+      color: #161d23;
+      font-size: clamp(13px, 1.4vw, 20px);
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .price-row {
+      margin: 6px 0 0;
+      color: #131619;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      white-space: nowrap;
+    }
+    .price-main {
+      font-size: clamp(30px, 4.4vw, 68px);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 1px;
+    }
+    .price-sub {
+      font-size: clamp(19px, 2vw, 31px);
+      font-weight: 500;
+    }
+    .explore-btn {
+      border: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 34px;
+      min-height: clamp(62px, 5.6vw, 88px);
+      border-radius: 999px;
+      background: #0f6e88;
+      color: #ecf8fc;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: clamp(18px, 1.6vw, 24px);
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .explore-btn:hover {
+      transform: translateY(-1px);
+    }
+    .explore-btn svg {
+      width: clamp(18px, 1.7vw, 28px);
+      height: clamp(18px, 1.7vw, 28px);
+      flex: 0 0 auto;
+    }
+    .enquiry-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 18, 26, 0.4);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      z-index: 9999;
+    }
+    .enquiry-modal.is-open {
+      display: flex;
+    }
+    .itinerary-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 18, 26, 0.4);
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 8px 8px 0;
+      z-index: 10000;
+    }
+    .itinerary-modal.is-open {
+      display: flex;
+    }
+    .itinerary-card {
+      width: 100%;
+      max-width: 760px;
+      height: min(78vh, 760px);
+      max-height: calc(100vh - 16px);
+      display: flex;
+      flex-direction: column;
+      background: #edf1f4;
+      border-radius: 16px 16px 0 0;
+      border: 1px solid #cbd4da;
+      padding: 18px 16px 16px;
+      position: relative;
+    }
+    .itinerary-content-scroll {
+      margin-top: 2px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      overflow-anchor: none;
+      overscroll-behavior: contain;
+      scroll-behavior: auto;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-y;
+      min-height: 0;
+      flex: 1;
+      padding-right: 2px;
+    }
+    .itinerary-close {
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      border: 0;
+      background: transparent;
+      color: #171b20;
+      font-size: 42px;
+      line-height: 0.85;
+      cursor: pointer;
+      padding: 0;
+    }
+    .itinerary-section-title {
+      margin: 0;
+      color: #151a1f;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(22px, 4.2vw, 34px);
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      padding-right: 38px;
+    }
+    .itinerary-section-title .accent {
+      color: #0f6d82;
+      font-weight: 700;
+    }
+    .itinerary-divider {
+      margin: 10px 0 14px;
+      height: 1px;
+      background: #1b232b;
+      opacity: 0.85;
+    }
+    .itinerary-timeline {
+      display: grid;
+      gap: 12px;
+    }
+    .itinerary-row {
+      display: grid;
+      grid-template-columns: 84px 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+    .itinerary-day {
+      color: #0f6d82;
+      font-weight: 700;
+      font-size: clamp(18px, 3.7vw, 24px);
+      line-height: 1;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .itinerary-day::after {
+      content: "";
+      position: absolute;
+      left: calc(50% - 2px);
+      top: 100%;
+      width: 4px;
+      height: 18px;
+      background: repeating-linear-gradient(
+        to bottom,
+        #aab3ba 0 8px,
+        transparent 8px 14px
+      );
+      opacity: 0.85;
+    }
+    .itinerary-row:last-child .itinerary-day::after {
+      display: none;
+    }
+    .itinerary-copy {
+      color: #1a1f24;
+      font-size: clamp(16px, 3.2vw, 20px);
+      line-height: 1.34;
+      font-weight: 500;
+    }
+    .itinerary-key-wrap {
+      margin-top: 12px;
+    }
+    .itinerary-bullets {
+      margin: 0;
+      padding-left: 20px;
+      display: grid;
+      gap: 8px;
+      color: #1a1f24;
+      font-size: clamp(16px, 3.2vw, 20px);
+      line-height: 1.34;
+      font-weight: 500;
+    }
+    .enquiry-card {
+      width: 100%;
+      max-width: 560px;
+      min-width: 0;
+      max-height: calc(100vh - 20px);
+      overflow: auto;
+      background: #ffffff;
+      border: 2px solid #8cc1cf;
+      border-radius: 16px;
+    }
+    .enquiry-hero {
+      position: relative;
+      min-height: 190px;
+      border-radius: 14px 14px 0 0;
+      background: linear-gradient(120deg, rgba(8, 34, 56, 0.3), rgba(8, 34, 56, 0.1)),
+        url("https://owf-website-content.s3.ap-south-1.amazonaws.com/people-holding-hands-as-sign-peace-with-mountains-background-winter.jpg")
+        center/cover no-repeat;
+    }
+    .enquiry-title {
+      margin: 0;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 48%;
+      transform: translateY(-50%);
+      text-align: center;
+      color: #ffe600;
+      font-size: clamp(36px, 10vw, 76px);
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 0 #122b42;
+    }
+    .enquiry-close {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      z-index: 2;
+      border: 0;
+      width: 42px;
+      height: 42px;
+      border-radius: 999px;
+      font-size: 30px;
+      line-height: 1;
+      color: #fff;
+      background: rgba(20, 39, 62, 0.7);
+      cursor: pointer;
+    }
+    .enquiry-body {
+      padding: 18px 14px 16px;
+      background: #ffffff;
+    }
+    .enquiry-headline {
+      margin: 0;
+      text-align: center;
+      color: #0c647e;
+      font-size: clamp(20px, 4.2vw, 32px);
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .enquiry-subline {
+      margin: 8px 0 14px;
+      text-align: center;
+      color: #3f3f3f;
+      font-size: clamp(14px, 3vw, 22px);
+      font-weight: 500;
+    }
+    .enquiry-form {
+      display: grid;
+      gap: 10px;
+    }
+    .input-wrap {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      align-items: center;
+      gap: 8px;
+      min-height: 54px;
+      padding: 0 10px;
+      border: 2px solid #7eaec0;
+      border-radius: 16px;
+      background: #f8fbfc;
+    }
+    .input-wrap svg {
+      width: 22px;
+      height: 22px;
+      color: #808080;
+      justify-self: center;
+    }
+    .input-wrap input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: #353535;
+      font-size: clamp(14px, 2.8vw, 20px);
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .input-wrap input::placeholder {
+      color: #7c7c7c;
+    }
+    .enquiry-submit {
+      border: 0;
+      width: 100%;
+      min-height: 54px;
+      margin-top: 6px;
+      border-radius: 999px;
+      background: #19a9c8;
+      color: #fff;
+      font-size: clamp(16px, 3.2vw, 24px);
+      font-weight: 700;
+      cursor: pointer;
+      text-transform: uppercase;
+    }
+    .enquiry-submit:hover {
+      filter: brightness(0.97);
+    }
+    @media (max-width: 820px) {
+      body { padding: 12px 8px; }
+      .cta-wrap { max-width: 100%; }
+      .cta-btn { gap: 7px; }
+      .enquiry-modal { padding: 8px; }
+      .enquiry-card { max-width: calc(100vw - 16px); }
+      .enquiry-hero { min-height: 160px; }
+      .trip-price-row { gap: 8px; }
+      .deal-ribbon { width: min(270px, 88%); }
+      .package-section { margin-top: 26px; }
+      .package-title { letter-spacing: 3px; margin-bottom: 10px; }
+      .inclusion-item { font-size: clamp(17px, 2.3vw, 26px); }
+      .price-title { letter-spacing: 4px; }
+      .reviews-track { grid-auto-columns: minmax(280px, 72%); }
+      .gallery-track { grid-auto-columns: 88vw; padding: 0; }
+    }
+    @media (max-width: 480px) {
+      .trip-title { font-size: clamp(21px, 7.2vw, 28px); letter-spacing: 1.8px; }
+      .trip-price-row { font-size: 11px; gap: 5px; }
+      .trip-new-price { font-size: clamp(18px, 6.4vw, 25px); }
+      .deal-ribbon { font-size: 13px; padding: 10px 10px; }
+      .cta-enquire { font-size: 18px; min-height: 46px; }
+      .cta-call, .cta-chat { font-size: 10px; min-height: 42px; padding: 0 6px; }
+      .cta-btn svg { width: 14px; height: 14px; }
+      .cta-btn { gap: 5px; }
+      .enquiry-headline { font-size: 15px; }
+      .enquiry-subline { font-size: 11px; margin: 6px 0 10px; }
+      .input-wrap { min-height: 48px; border-radius: 12px; }
+      .input-wrap input { font-size: 13px; }
+      .enquiry-submit { min-height: 46px; font-size: 13px; }
+      .package-section { margin-top: 24px; }
+      .package-title { font-size: 18px; letter-spacing: 3px; }
+      .trending-tag { padding: 7px 16px; font-size: 12px; gap: 7px; }
+      .package-content { padding: 12px; }
+      .package-duration { font-size: 13px; }
+      .route-pill { margin: 10px 0 12px; padding: 8px 12px; font-size: 12px; }
+      .package-name { font-size: 16px; line-height: 1.3; }
+      .inclusion-grid { margin-top: 12px; gap: 8px 10px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .inclusion-item { font-size: 11px; gap: 7px; }
+      .inclusion-item svg { width: 16px; height: 16px; }
+      .flights-line { margin-top: 0; gap: 7px; }
+      .flights-badge { font-size: inherit; padding: 4px 8px; }
+      .package-footer { margin-top: 12px; gap: 8px; flex-wrap: nowrap; align-items: flex-end; }
+      .price-title { font-size: 9px; letter-spacing: 3px; }
+      .price-main { font-size: 24px; }
+      .price-sub { font-size: 10px; }
+      .explore-btn { min-height: 38px; padding: 0 14px; font-size: 9px; letter-spacing: 1.5px; gap: 6px; }
+      .explore-btn svg { width: 14px; height: 14px; }
+      .itinerary-modal { padding: 8px 6px 0; }
+      .itinerary-card { height: 74vh; border-radius: 14px; padding: 14px 12px 14px; max-height: calc(100vh - 16px); }
+      .itinerary-content-scroll { padding-right: 0; }
+      .itinerary-close { top: 6px; right: 8px; font-size: 34px; }
+      .itinerary-section-title { font-size: 17px; padding-right: 34px; }
+      .itinerary-divider { margin: 8px 0 11px; }
+      .itinerary-row { grid-template-columns: 68px 1fr; gap: 8px; }
+      .itinerary-day { font-size: 13px; padding-bottom: 8px; }
+      .itinerary-day::after { height: 14px; width: 3px; left: calc(50% - 1.5px); }
+      .itinerary-copy { font-size: 12px; line-height: 1.34; }
+      .itinerary-key-wrap { margin-top: 12px; }
+      .itinerary-bullets { font-size: 12px; padding-left: 17px; gap: 7px; }
+      .reviews-section { margin-top: 22px; padding: 12px 8px 12px; }
+      .reviews-heading-wrap { margin-bottom: 10px; }
+      .reviews-heading { font-size: 17px; letter-spacing: 0.2px; }
+      .reviews-kicker { font-size: 8px; letter-spacing: 1.6px; }
+      .reviews-track { grid-auto-columns: 92%; gap: 10px; padding-bottom: 6px; }
+      .review-card { padding: 10px; border-radius: 13px; gap: 8px; }
+      .review-avatar { width: 30px; height: 30px; }
+      .review-user-name { font-size: 11px; }
+      .review-user-trip { font-size: 9px; }
+      .review-rating { font-size: 9px; padding: 3px 7px; }
+      .review-rating svg { width: 11px; height: 11px; }
+      .review-quote { font-size: 10px; line-height: 1.45; }
+      .review-quote { -webkit-line-clamp: 5; }
+      .review-toggle { font-size: 10px; }
+      .review-media-strip { gap: 5px; }
+      .review-media { border-radius: 7px; }
+      .faq-section { margin-top: 14px; }
+      .faq-link-card { border-radius: 12px; padding: 10px 12px; gap: 10px; }
+      .faq-title { font-size: 13px; letter-spacing: 0.8px; }
+      .faq-sub { font-size: 10px; margin-top: 3px; }
+      .faq-arrow { width: 28px; height: 28px; }
+      .faq-arrow svg { width: 14px; height: 14px; }
+      .gallery-section { margin-top: 20px; padding: 0; }
+      .gallery-track { grid-auto-columns: 88vw; gap: 2px; padding: 0; }
+      .gallery-card { border-radius: 0; }
+      .spiti-tagline { margin-top: 8px; padding: 15px 10px 13px; }
+      .spiti-tagline-title { font-size: 30px; }
+      .spiti-tagline-sub { margin-top: 5px; font-size: 16px; }
+      .site-footer { margin-top: 14px; min-height: 0; padding: 0 10px 10px; }
+      .footer-accent-bar { margin-bottom: 18px; }
+      .footer-address { margin-top: 10px; font-size: 12px; line-height: 1.42; max-width: 98%; }
+      .footer-contact-row { margin-top: 12px; gap: 6px; }
+      .footer-contact-link { font-size: 12px; }
+      .footer-quick-links { margin-top: 8px; }
+      .footer-quick-title { font-size: 11px; }
+      .footer-quick-grid { margin-top: 5px; gap: 4px 8px; }
+      .footer-quick-link { font-size: 11px; }
+      .footer-social { margin-top: 10px; padding: 6px 8px; gap: 8px; }
+      .footer-social-link { width: 34px; height: 34px; }
+      .footer-social-icon { width: 18px; height: 18px; }
+      .footer-skyline { margin-top: 10px; height: 44px; border-bottom-width: 1px; }
+      .footer-copy { margin-top: 8px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+  <noscript>
+    <img
+      height="1"
+      width="1"
+      style="display:none"
+      src="https://www.facebook.com/tr?id=1102587028413438&ev=PageView&noscript=1"
+      alt=""
+    />
+  </noscript>
+  <div class="cta-wrap">
+    <div class="video-wrap">
+      <!--
+        FIX 5a: preload changed from "auto" (downloads entire video on load) to
+                 "metadata" — drastically reduces data usage on mobile.
+        FIX 5b: poster changed from relative "clip_24.mov.png" (broken in deploy)
+                 to an absolute S3 URL so users see a frame while the video loads.
+      -->
+      <video
+        id="heroVideo"
+        autoplay
+        muted
+        playsinline
+        webkit-playsinline
+        loop
+        preload="metadata"
+        poster="https://owf-website-content.s3.ap-south-1.amazonaws.com/people-holding-hands-as-sign-peace-with-mountains-background-winter.jpg"
+      >
+        <source
+          src="https://owf-website-content.s3.ap-south-1.amazonaws.com/winter+spiti+website+video.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    <section class="trip-card" aria-label="Trip pricing">
+      <h2 class="trip-title">Winter Spiti</h2>
+      <div class="trip-price-row">
+        <span>STARTING FROM</span>
+        <span class="trip-old-price">₹26,999</span>
+        <span class="trip-new-price">₹19,900</span>
+      </div>
+      <div class="deal-ribbon">Limited Time Deal</div>
+    </section>
+    <a class="cta-btn cta-enquire" href="#" id="openEnquiry">Enquire Now</a>
+    <div class="cta-row">
+      <a class="cta-btn cta-call" href="tel:+919102013111" aria-label="Call now">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 122.88 118.72" aria-hidden="true">
+          <path fill="currentColor" d="M29.22,56.54c3.57,6.43,7.67,12.6,13.02,18.24C47.58,80.45,54.24,85.6,62.86,90c0.64,0.31,1.25,0.31,1.78,0.1c0.82-0.31,1.66-0.99,2.48-1.81c0.64-0.64,1.43-1.66,2.26-2.77c3.31-4.36,7.42-9.77,13.21-7.07c0.13,0.06,0.23,0.13,0.35,0.19l19.33,11.11c0.06,0.03,0.13,0.1,0.19,0.13c2.55,1.75,3.6,4.46,3.63,7.52c0,3.12-1.15,6.63-2.83,9.58c-2.22,3.91-5.51,6.5-9.29,8.21c-3.6,1.66-7.61,2.55-11.46,3.12c-6.05,0.89-11.71,0.32-17.5-1.46c-5.67-1.75-11.37-4.65-17.6-8.5l-0.46-0.29c-2.86-1.78-5.95-3.7-8.98-5.95c-11.1-8.38-22.4-20.47-29.76-33.78C2.03,57.15-1.34,45.09,0.5,33.59c1.02-6.3,3.72-12.03,8.44-15.82c4.11-3.31,9.64-5.13,16.81-4.49c0.82,0.06,1.56,0.54,1.94,1.24l12.39,20.94c1.81,2.35,2.04,4.68,1.05,7.01c-0.82,1.91-2.48,3.67-4.74,5.31c-0.67,0.57-1.46,1.15-2.29,1.75c-2.77,2.01-5.92,4.33-4.84,7.07L29.22,56.54z"/>
+        </svg>
+        <span>Call Now</span>
+      </a>
+      <a class="cta-btn cta-chat" href="https://wa.me/919102013111?text=Hey%20OWF%20Trips!%20I%20am%20looking%20for%20a%20Winter%20Spiti%20Trip.%20Please%20share%20details" target="_blank" rel="noopener" aria-label="Chat with us on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 512.459" aria-hidden="true">
+          <path fill="#111B21" d="M435.689 74.468C387.754 26.471 324 .025 256.071 0 116.098 0 2.18 113.906 2.131 253.916c-.024 44.758 11.677 88.445 33.898 126.946L0 512.459l134.617-35.311c37.087 20.238 78.85 30.891 121.345 30.903h.109c139.949 0 253.88-113.917 253.928-253.928.024-67.855-26.361-131.645-74.31-179.643v-.012zm-179.618 390.7h-.085c-37.868-.011-75.016-10.192-107.428-29.417l-7.707-4.577-79.886 20.953 21.32-77.889-5.017-7.987c-21.125-33.605-32.29-72.447-32.266-112.322.049-116.366 94.729-211.046 211.155-211.046 56.373.025 109.364 22.003 149.214 61.903 39.853 39.888 61.781 92.927 61.757 149.313-.05 116.377-94.728 211.058-211.057 211.058v.011zm115.768-158.067c-6.344-3.178-37.537-18.52-43.358-20.639-5.82-2.119-10.044-3.177-14.27 3.178-4.225 6.357-16.388 20.651-20.09 24.875-3.702 4.238-7.403 4.762-13.747 1.583-6.343-3.178-26.787-9.874-51.029-31.487-18.86-16.827-31.597-37.598-35.297-43.955-3.702-6.355-.39-9.789 2.775-12.943 2.849-2.848 6.344-7.414 9.522-11.116s4.225-6.355 6.343-10.581c2.12-4.238 1.06-7.937-.522-11.117-1.584-3.177-14.271-34.409-19.568-47.108-5.151-12.37-10.385-10.69-14.269-10.897-3.703-.183-7.927-.219-12.164-.219s-11.105 1.582-16.925 7.939c-5.82 6.354-22.209 21.709-22.209 52.927 0 31.22 22.733 61.405 25.911 65.642 3.177 4.237 44.745 68.318 108.389 95.812 15.135 6.538 26.957 10.446 36.175 13.368 15.196 4.834 29.027 4.153 39.96 2.52 12.19-1.825 37.54-15.353 42.824-30.172 5.283-14.818 5.283-27.529 3.701-30.172-1.582-2.641-5.819-4.237-12.163-7.414l.011-.024z"/>
+        </svg>
+        <span>Chat With Us</span>
+      </a>
+    </div>
+    <section class="package-section" aria-label="Spiti package details">
+      <h2 class="package-title">Spiti Packages</h2>
+      <article class="package-card">
+        <div class="package-media">
+          <img
+            src="https://owf-website-content.s3.ap-south-1.amazonaws.com/people-holding-hands-as-sign-peace-with-mountains-background-winter.jpg"
+            alt="Spiti mountains and lake view"
+            loading="lazy"
+          />
+          <span class="trending-tag">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M4 16l6.5-6.5 4 4L20 8v4h2V4h-8v2h4.58l-4.08 4.08-4-4L2.58 14z"/>
+            </svg>
+            <span>Trending Now</span>
+          </span>
+        </div>
+        <div class="package-content">
+          <p class="package-duration">6 Nights 7 Days</p>
+          <div class="route-pill">Delhi &rarr; Shimla &rarr; Kalpa &rarr; Tabo &rarr; Kaza &rarr; Dhankar &rarr; Key Monastery &rarr; Hikkim &rarr; Komic &rarr; Langza &rarr; Kalpa &rarr; Chitkul &rarr; Delhi</div>
+          <h3 class="package-name">7 Days Winter Spiti Backpacking Trip</h3>
+          <div class="inclusion-grid">
+            <span class="inclusion-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#2fb25f" d="M9.55 17.72L4.8 12.97l1.41-1.41 3.34 3.34 8.24-8.24 1.41 1.41z"/>
+              </svg>
+              Sightseeing
+            </span>
+            <span class="inclusion-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#2fb25f" d="M9.55 17.72L4.8 12.97l1.41-1.41 3.34 3.34 8.24-8.24 1.41 1.41z"/>
+              </svg>
+              Transfers
+            </span>
+            <span class="inclusion-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#2fb25f" d="M9.55 17.72L4.8 12.97l1.41-1.41 3.34 3.34 8.24-8.24 1.41 1.41z"/>
+              </svg>
+              Meals
+            </span>
+            <span class="inclusion-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#2fb25f" d="M9.55 17.72L4.8 12.97l1.41-1.41 3.34 3.34 8.24-8.24 1.41 1.41z"/>
+              </svg>
+              Stay
+            </span>
+            <span class="inclusion-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#2fb25f" d="M9.55 17.72L4.8 12.97l1.41-1.41 3.34 3.34 8.24-8.24 1.41 1.41z"/>
+              </svg>
+              Trip Captain
+            </span>
+            <span class="inclusion-item">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#2fb25f" d="M9.55 17.72L4.8 12.97l1.41-1.41 3.34 3.34 8.24-8.24 1.41 1.41z"/>
+              </svg>
+              Oxygen Cylinder
+            </span>
+            <span class="inclusion-item flights-line">
+              <svg class="flights-icon" viewBox="0 0 122.88 122.88" aria-hidden="true">
+                <path
+                  fill="currentColor"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M16.63,105.75c0.01-4.03,2.3-7.97,6.03-12.38L1.09,79.73c-1.36-0.59-1.33-1.42-0.54-2.4l4.57-3.9
+                  c0.83-0.51,1.71-0.73,2.66-0.47l26.62,4.5l22.18-24.02L4.8,18.41c-1.31-0.77-1.42-1.64-0.07-2.65l7.47-5.96l67.5,18.97
+                  L99.64,7.45c6.69-5.79,13.19-8.38,18.18-7.15c2.75,0.68,3.72,1.5,4.57,4.08c1.65,5.06-0.91,11.86-6.96,18.86L94.11,43.18
+                  l18.97,67.5l-5.96,7.47c-1.01,1.34-1.88,1.23-2.65-0.07L69.43,66.31L45.41,88.48l4.5,26.62c0.26,0.94,0.05,1.82-0.47,2.66
+                  l-3.9,4.57c-0.97,0.79-1.81,0.82-2.4-0.54l-13.64-21.57c-4.43,3.74-8.37,6.03-12.42,6.03C16.71,106.24,16.63,106.11,16.63,105.75
+                  L16.63,105.75z"
+                />
+              </svg>
+              <span class="flights-text">Flights</span>
+              <span class="flights-badge">Additional</span>
+            </span>
+          </div>
+          <div class="package-footer">
+            <div>
+              <p class="price-title">Starts From</p>
+              <p class="price-row">
+                <span class="price-main">&#8377;19,900/-</span>
+                <span class="price-sub">Per Person</span>
+              </p>
+            </div>
+            <button class="explore-btn" type="button" id="openItinerary" aria-label="Open brief itinerary">
+              <span>Explore</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42L17.59 5H14V3z"/>
+                <path fill="currentColor" d="M19 19H5V5h6V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-2v6z"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </article>
+    </section>
+    <section class="reviews-section" aria-label="Customer reviews">
+      <div class="reviews-heading-wrap">
+        <h3 class="reviews-heading">Real Traveler Stories</h3>
+        <p class="reviews-kicker">Unfiltered Reviews</p>
+      </div>
+      <div class="reviews-track">
+        <!-- Review 1: Suman Saurabh -->
+        <article class="review-card">
+          <div class="review-head">
+            <div class="review-user">
+              <!--
+                FIX 6: Replaced freepik.com avatar (unreliable third-party CDN,
+                potential license issues) with a self-contained SVG initials avatar.
+              -->
+              <img
+                class="review-avatar"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%230d6a85'/%3E%3Ctext x='20' y='26' font-family='Arial%2Csans-serif' font-size='14' font-weight='bold' fill='white' text-anchor='middle'%3ESS%3C/text%3E%3C/svg%3E"
+                alt="Suman Saurabh"
+              >
+              <div class="review-user-meta">
+                <p class="review-user-name">Suman Saurabh (Delhi)</p>
+                <p class="review-user-trip">Spiti Backpacking Trip</p>
+              </div>
+            </div>
+            <span class="review-rating">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="m12 17.27 5.18 3.13-1.37-5.89 4.58-3.97-6.03-.52L12 4.5l-2.36 5.52-6.03.52 4.58 3.97-1.37 5.89z"/>
+              </svg>
+              5.0
+            </span>
+          </div>
+          <p class="review-quote">"My experiences with OwfTrips have been nothing short of exceptional. Having embarked on multiple trips with them, including one as a solo traveler, I can confidently say they excel in every aspect. From start to finish, OwfTrips goes above and beyond to exceed expectations. They not only deliver on their promises but also ensure each trip is filled with fun and engagement for all travelers. There's a palpable sense of harmony and humor within the group, making every moment memorable. I wholeheartedly recommend OwfTrips for anyone seeking a travel experience that blends professionalism with genuine enjoyment."</p>
+          <button class="review-toggle" type="button" aria-expanded="false">Read more</button>
+          <div class="review-media-strip">
+            <div class="review-media">
+              <img src="https://owf-website-content.s3.ap-south-1.amazonaws.com/Spiti+Pictures/IMG_1530+2.jpg" alt="Spiti winter scenery">
+            </div>
+            <div class="review-media">
+              <img src="https://owf-website-content.s3.ap-south-1.amazonaws.com/Spiti+Pictures/IMG_2373+2.jpg" alt="Spiti valley view">
+            </div>
+          </div>
+        </article>
+        <!-- Review 2: Karishma -->
+        <article class="review-card">
+          <div class="review-head">
+            <div class="review-user">
+              <img
+                class="review-avatar"
+                src="https://owf-website-content.s3.ap-south-1.amazonaws.com/Spiti+Pictures/ChatGPT+Image+Jan+20%2C+2026%2C+01_44_17+PM.png"
+                alt="Karishma"
+              >
+              <div class="review-user-meta">
+                <p class="review-user-name">Karishma (Pune)</p>
+                <p class="review-user-trip">Winter Spiti Trip</p>
+              </div>
+            </div>
+            <span class="review-rating">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="m12 17.27 5.18 3.13-1.37-5.89 4.58-3.97-6.03-.52L12 4.5l-2.36 5.52-6.03.52 4.58 3.97-1.37 5.89z"/>
+              </svg>
+              5
+            </span>
+          </div>
+          <p class="review-quote">"I honestly don't even know where to start because this Winter Spiti group trip with OWF Trips was beyond magical.From frozen rivers to snow-covered villages, every single day felt like a dream. Spiti in winters is raw, unreal and straight out of a postcard — and OWF made sure we experienced it in the best way possible. Traveling as a girl in extreme winter conditions can be scary, but I felt completely safe and comfortable throughout the trip. The trip captain was super supportive, the stays were cozy and warm, and everything was so well managed despite the harsh weather. No chaos, no confusion — just pure adventure! Watching the frozen waterfalls, visiting Key Monastery covered in snow, experiencing -15°C, doing snow walks, and stargazing under the clearest sky ever… these are memories I'll cherish forever. The best part? The group vibe! I went with strangers and came back with friends for life. So many laughs, late-night talks, snowball fights and endless photos! If you're thinking about doing Spiti in winters — JUST GO. And go with OWF Trips. They truly know how to turn a trip into an experience. Can't wait for my next adventure with you guys!"</p>
+          <button class="review-toggle" type="button" aria-expanded="false">Read more</button>
+          <div class="review-media-strip">
+            <!--
+              FIX 8: Karishma's media strip previously showed the same AI-generated
+              image that was already used as her avatar, making it look like a
+              placeholder. Replaced with actual trip photos from S3.
+            -->
+            <div class="review-media">
+              <img src="https://owf-website-content.s3.ap-south-1.amazonaws.com/Spiti+Pictures/IMG_2402+2.jpg" alt="Winter Spiti scenery">
+            </div>
+            <div class="review-media">
+              <img src="https://owf-website-content.s3.ap-south-1.amazonaws.com/Spiti+Pictures/IMG_1563.jpeg" alt="Spiti valley view">
+            </div>
+          </div>
+        </article>
+        <!-- Review 3: Nitin Gupta -->
+        <article class="review-card">
+          <div class="review-head">
+            <div class="review-user">
+              <!--
+                FIX 6: Replaced mockmind-api.uifaces.co avatar (unreliable placeholder
+                API, unsuitable for production) with an SVG initials avatar.
+              -->
+              <img
+                class="review-avatar"
+                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='20' fill='%23234d57'/%3E%3Ctext x='20' y='26' font-family='Arial%2Csans-serif' font-size='14' font-weight='bold' fill='white' text-anchor='middle'%3ENG%3C/text%3E%3C/svg%3E"
+                alt="Nitin Gupta"
+              >
+              <div class="review-user-meta">
+                <p class="review-user-name">Nitin Gupta (Bangalore)</p>
+                <p class="review-user-trip">First Spiti Expedition</p>
+              </div>
+            </div>
+            <span class="review-rating">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="currentColor" d="m12 17.27 5.18 3.13-1.37-5.89 4.58-3.97-6.03-.52L12 4.5l-2.36 5.52-6.03.52 4.58 3.97-1.37 5.89z"/>
+              </svg>
+              5.0
+            </span>
+          </div>
+          <p class="review-quote">"My lust for wander came to halt here at OWF, as I found my joy here. The team at OWF were not captains, they were just like us, enjoying, guiding, mentoring, sharing and helping all of us. Being a captain is a very important job and Shivam ji & Kush ji did a commendable job here. Not only did they take the right steps and decisions for the herd, they took every opportunity to make the trip full of fun, carefully tweaked adventure and satisfaction to one's wanderlust. Me being a first-timer, I was encouraged by the captains and the whole herd to make my adventure come out and DO IT. The whole trip was carefully organized and every point was taken into consideration and that too at runtime based on all factors. Transportation, accommodation, food, and love were top-notch, keeping in mind the cost of the trip. No corner cuts or chindi chori was done at any cost. I am for sure sticking to OWF for my adventure & wanderlust. Keep it up guys and remember your lust & passion for wander & adventure will become some other's inspiration, so keep doing your best and the herd will keep getting bigger. Thank you once again for this Spiti valley trip."</p>
+          <button class="review-toggle" type="button" aria-expanded="false">Read more</button>
+          <div class="review-media-strip">
+            <div class="review-media">
+              <img src="https://owf-website-content.s3.ap-south-1.amazonaws.com/Spiti+Pictures/DSC_0309.jpg" alt="High-altitude viewpoint">
+            </div>
+            <div class="review-media">
+              <img src="https://owf-website-content.s3.ap-south-1.amazonaws.com/Spiti+Pictures/IMG_1694.jpeg" alt="Group by lakefront">
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="faq-section" aria-label="FAQs">
+      <a class="faq-link-card" href="https://www.owftrips.in/winter-spiti-valley-trip-faqs" target="_blank" rel="noopener">
+        <div class="faq-copy">
+          <p class="faq-title">FAQ'S</p>
+          <p class="faq-sub">Tap to read Winter Spiti trip questions and answers.</p>
+        </div>
+        <span class="faq-arrow" aria-hidden="true">
+          <svg viewBox="0 0 24 24">
+            <path fill="currentColor" d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42L17.59 5H14V3z"/>
+            <path fill="currentColor" d="M19 19H5V5h6V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6h-2v6z"/>
+          </svg>
+        </span>
+      </a>
+    </section>
+    <section class="gallery-section" aria-label="Spiti moments gallery">
+      <div class="gallery-viewport">
+        <div class="gallery-track" id="galleryTrack">
+          <article class="gallery-card">
+            <img src="https://owf-website-content.s3.ap-south-1.amazonaws.com/Spiti+Pictures/IMG_2402+2.jpg" alt="Spiti gallery image 1">
+          </article>
+          <article class="gallery-card">
+            <img src="https://owf-website-content.s3.ap-south-1.amazonaws.com/Spiti+Pictures/IMG_1446+2.jpg" alt="Spiti gallery image 2">
+          </article>
+          <article class="gallery-card">
+            <img src="https://owf-website-content.s3.ap-south-1.amazonaws.com/Spiti+Pictures/ChatGPT+Image+Jan+20%2C+2026%2C+01_44_17+PM.png" alt="Spiti gallery image 3">
+          </article>
+          <article class="gallery-card">
+            <img src="https://owf-website-content.s3.ap-south-1.amazonaws.com/Spiti+Pictures/IMG_1118+2.JPG" alt="Spiti gallery image 4">
+          </article>
+          <article class="gallery-card">
+            <img src="https://owf-website-content.s3.ap-south-1.amazonaws.com/Spiti+Pictures/IMG_1563.jpeg" alt="Spiti gallery image 5">
+          </article>
+          <article class="gallery-card">
+            <img src="https://owf-website-content.s3.ap-south-1.amazonaws.com/Spiti+Pictures/ChatGPT+Image+Jan+20%2C+2026%2C+01_34_03+PM.png" alt="Spiti gallery image 6">
+          </article>
+          <article class="gallery-card">
+            <img src="https://owf-website-content.s3.ap-south-1.amazonaws.com/Spiti+Pictures/IMG_1437.jpg" alt="Spiti gallery image 7">
+          </article>
+        </div>
+      </div>
+    </section>
+    <section class="spiti-tagline" aria-label="Spiti tagline">
+      <div class="spiti-tagline-inner">
+        <p class="spiti-tagline-title">Spiti</p>
+        <p class="spiti-tagline-sub">India's High-Altitude Land of Adventure</p>
+      </div>
+    </section>
+    <footer class="site-footer" aria-label="Company footer">
+      <div class="footer-accent-bar" aria-hidden="true"></div>
+      <div class="footer-inner">
+        <h3 class="footer-company">OWF TRIPS LLP</h3>
+        <p class="footer-address">LLPIN: ACP-8848</p>
+        <p class="footer-address">Varthur Main Rd, opp. Dmart, Brookefield, Bengaluru, Karnataka 560066</p>
+        <div class="footer-contact-row">
+          <a class="footer-contact-link" href="mailto:bookings@owftrips.in">bookings@owftrips.in</a>
+          <a class="footer-contact-link" href="tel:+918296966873">+91-8296966873</a>
+          <a class="footer-contact-link" href="https://www.owftrips.in" target="_blank" rel="noopener">www.owftrips.in</a>
+        </div>
+        <div class="footer-quick-links" aria-label="Quick links">
+          <p class="footer-quick-title">Quick Links</p>
+          <div class="footer-quick-grid">
+            <a class="footer-quick-link" href="https://www.owftrips.in/about" target="_blank" rel="noopener">About Us</a>
+            <a class="footer-quick-link" href="https://www.owftrips.in/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a>
+            <a class="footer-quick-link" href="https://www.owftrips.in/cancellation-policy" target="_blank" rel="noopener">Cancellation Policy</a>
+            <a class="footer-quick-link" href="https://www.owftrips.in/terms-and-conditions" target="_blank" rel="noopener">Terms &amp; Conditions</a>
+            <a class="footer-quick-link" href="https://www.owftrips.in/disclaimer" target="_blank" rel="noopener">Disclaimer</a>
+            <a class="footer-quick-link" href="https://www.owftrips.in/payments" target="_blank" rel="noopener">Payments</a>
+          </div>
+        </div>
+        <div class="footer-social" aria-label="Social links">
+          <a class="footer-social-link" href="https://www.facebook.com/owftrips" target="_blank" rel="noopener" aria-label="Facebook">
+            <img class="footer-social-icon" src="https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/facebook-round-color-icon.svg" alt="" width="21" height="21">
+          </a>
+          <a class="footer-social-link" href="https://www.instagram.com/owftrips" target="_blank" rel="noopener" aria-label="Instagram">
+            <img class="footer-social-icon" src="https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/ig-instagram-icon.svg" alt="" width="21" height="21">
+          </a>
+          <a class="footer-social-link" href="https://www.youtube.com/@owftrips" target="_blank" rel="noopener" aria-label="YouTube">
+            <img class="footer-social-icon" src="https://owf-website-content.s3.ap-south-1.amazonaws.com/HomePage/youtube-color-icon.svg" alt="" width="21" height="21">
+          </a>
+        </div>
+        <div class="footer-skyline" aria-hidden="true"></div>
+        <p class="footer-copy">&copy; OWF TRIPS LLP, All rights reserved.</p>
+      </div>
+    </footer>
+  </div>
+  <!-- Enquiry modal -->
+  <div class="enquiry-modal" id="enquiryModal" aria-hidden="true">
+    <div class="enquiry-card" role="dialog" aria-modal="true" aria-labelledby="enquiryModalTitle">
+      <div class="enquiry-hero">
+        <button class="enquiry-close" id="closeEnquiry" aria-label="Close enquiry form">&times;</button>
+        <h2 class="enquiry-title" id="enquiryModalTitle">Spiti</h2>
+      </div>
+      <div class="enquiry-body">
+        <p class="enquiry-headline">Don't Just Dream, Travel 🔥</p>
+        <p class="enquiry-subline">Allow us to call you back!</p>
+        <form class="enquiry-form" id="enquiryForm" action="#" method="post">
+          <label class="input-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm0 2c-3.34 0-10 1.68-10 5v2h20v-2c0-3.32-6.66-5-10-5z"/>
+            </svg>
+            <input type="text" name="name" placeholder="Enter your name*" aria-label="Your name" required>
+          </label>
+          <label class="input-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M6.6 10.8a15.4 15.4 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.1.37 2.28.57 3.5.57a1 1 0 0 1 1 1V21a1 1 0 0 1-1 1C10.85 22 2 13.15 2 2a1 1 0 0 1 1-1h4.49a1 1 0 0 1 1 1c0 1.22.2 2.4.57 3.5a1 1 0 0 1-.24 1L6.6 10.8z"/>
+            </svg>
+            <input type="tel" name="phone" placeholder="Enter your phone number*" aria-label="Your phone number" required>
+          </label>
+          <label class="input-wrap">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.11.9 2 2 2h16c1.1 0 2-.89 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            <input type="email" name="email" placeholder="Enter your email" aria-label="Your email address">
+          </label>
+          <button type="submit" class="enquiry-submit" id="enquirySubmitBtn">Enquire Now</button>
+          <p id="enquiryMessage" aria-live="polite" style="margin: 8px 2px 0; font-size: 12px; color: #33434d;"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- Itinerary modal -->
+  <div class="itinerary-modal" id="itineraryModal" aria-hidden="true">
+    <div class="itinerary-card" role="dialog" aria-modal="true" aria-labelledby="itineraryTitle">
+      <button class="itinerary-close" id="closeItinerary" aria-label="Close itinerary">&times;</button>
+      <div class="itinerary-content-scroll" id="itineraryScroll">
+        <h2 class="itinerary-section-title" id="itineraryTitle">
+          Brief <span class="accent">Itinerary</span>
+        </h2>
+        <div class="itinerary-divider"></div>
+        <div class="itinerary-timeline">
+          <div class="itinerary-row">
+            <div class="itinerary-day">Day 1</div>
+            <div class="itinerary-copy">Reach Shimla- Transfer to Kalpa via Kinnaur Gate.</div>
+          </div>
+          <div class="itinerary-row">
+            <div class="itinerary-day">Day 2</div>
+            <div class="itinerary-copy">Into the Heart of Spiti – Kalpa to Tabo via Nako.</div>
+          </div>
+          <div class="itinerary-row">
+            <div class="itinerary-day">Day 3</div>
+            <div class="itinerary-copy">Spiritual Heights – Dhankar, Key Monastery & Chicham Bridge.</div>
+          </div>
+          <div class="itinerary-row">
+            <div class="itinerary-day">Day 4</div>
+            <div class="itinerary-copy">Village Vibes – Hikkim, Komic & Langza.</div>
+          </div>
+          <div class="itinerary-row">
+            <div class="itinerary-day">Day 5</div>
+            <div class="itinerary-copy">Waterfall Wonders – Kaza to Kalpa via Lingti.</div>
+          </div>
+          <div class="itinerary-row">
+            <div class="itinerary-day">Day 6</div>
+            <div class="itinerary-copy">Borderline Beauty – Kalpa to Chitkul.</div>
+          </div>
+          <div class="itinerary-row">
+            <div class="itinerary-day">Day 7</div>
+            <div class="itinerary-copy">Depart to Shimla. Overnight transfer to Delhi.</div>
+          </div>
+        </div>
+        <div class="itinerary-key-wrap">
+          <h3 class="itinerary-section-title">
+            Key <span class="accent">Attractions</span>
+          </h3>
+          <div class="itinerary-divider"></div>
+          <ul class="itinerary-bullets">
+            <li>Cross the mighty Kunzum La (4,551m) and begin your winter odyssey into Spiti's icy landscapes.</li>
+            <li>Spend time in Kalpa, with breathtaking views of the majestic Kinner Kailash range.</li>
+            <li>Visit the serene Nako Lake village and witness its frozen beauty in winter.</li>
+            <li>Explore the ancient Tabo Monastery, the "Ajanta of the Himalayas," steeped in history and culture.</li>
+            <li>Marvel at Dhankar Monastery, perched dramatically above the confluence of rivers.</li>
+            <li>Visit the iconic Key Monastery, a beacon of peace and history in Spiti.</li>
+            <li>Walk across Chicham Bridge, one of the highest suspension bridges in Asia.</li>
+            <li>Send Postcard to loved ones from Hikkim – home to the world's highest post office.</li>
+            <li>Visit Komic, one of the world's highest motorable villages.</li>
+            <li>Spot the giant statue of Buddha and marine fossils at Langza Village.</li>
+            <li>Capture the beauty of Lingti Waterfall en route back to Kalpa.</li>
+            <li>Explore Chitkul, the last inhabited Indian village near the Indo-Tibet border.</li>
+            <li>Enjoy one of India's most thrilling winter road trips on rugged Himalayan roads with like-minded explorers.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function () {
+      var video = document.getElementById("heroVideo");
+      var openBtn = document.getElementById("openEnquiry");
+      var closeBtn = document.getElementById("closeEnquiry");
+      var modal = document.getElementById("enquiryModal");
+      var openItineraryBtn = document.getElementById("openItinerary");
+      var closeItineraryBtn = document.getElementById("closeItinerary");
+      var itineraryModal = document.getElementById("itineraryModal");
+      var itineraryScroll = document.getElementById("itineraryScroll");
+      var enquiryForm = document.getElementById("enquiryForm");
+      var enquirySubmitBtn = document.getElementById("enquirySubmitBtn");
+      var enquiryMessage = document.getElementById("enquiryMessage");
+      var callBtn = document.querySelector(".cta-call");
+      var chatBtn = document.querySelector(".cta-chat");
+      var reviewCards = document.querySelectorAll(".review-card");
+      var galleryTrack = document.getElementById("galleryTrack");
+      var galleryCards = galleryTrack ? galleryTrack.querySelectorAll(".gallery-card") : [];
+      var body = document.body;
+      var leadApiUrl = window.LEAD_API_URL || "https://wu3pbmis2e.ap-south-1.awsapprunner.com/api/leads";
+
+      function lockScroll() {
+        body.style.overflow = "hidden";
+      }
+      function unlockScroll() {
+        body.style.overflow = "";
+      }
+      function tryPlayVideo() {
+        if (!video) return;
+        video.muted = true;
+        video.defaultMuted = true;
+        video.play().catch(function () {});
+      }
+      function openEnquiryModal(event) {
+        event.preventDefault();
+        modal.classList.add("is-open");
+        modal.setAttribute("aria-hidden", "false");
+        lockScroll();
+      }
+      function closeEnquiryModal() {
+        modal.classList.remove("is-open");
+        modal.setAttribute("aria-hidden", "true");
+        if (!itineraryModal.classList.contains("is-open")) unlockScroll();
+      }
+      function openItineraryModal(event) {
+        if (event) event.preventDefault();
+        itineraryModal.classList.add("is-open");
+        itineraryModal.setAttribute("aria-hidden", "false");
+        lockScroll();
+        resetItineraryScroll();
+        requestAnimationFrame(resetItineraryScroll);
+        setTimeout(resetItineraryScroll, 60);
+        setTimeout(resetItineraryScroll, 160);
+      }
+      function closeItineraryModal() {
+        resetItineraryScroll();
+        itineraryModal.classList.remove("is-open");
+        itineraryModal.setAttribute("aria-hidden", "true");
+        if (!modal.classList.contains("is-open")) unlockScroll();
+      }
+      function resetItineraryScroll() {
+        if (!itineraryScroll) return;
+        itineraryScroll.scrollTop = 0;
+        itineraryScroll.scrollLeft = 0;
+        if (typeof itineraryScroll.scrollTo === "function") {
+          itineraryScroll.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        }
+      }
+      function trackLead() {
+        if (typeof window.fbq === "function") {
+          window.fbq("track", "Lead");
+        }
+      }
+      function initReviewToggles() {
+        if (!reviewCards || !reviewCards.length) return;
+        reviewCards.forEach(function (card, index) {
+          var quote = card.querySelector(".review-quote");
+          var toggle = card.querySelector(".review-toggle");
+          if (!quote || !toggle) return;
+          if (!quote.id) quote.id = "review-quote-" + (index + 1);
+          toggle.setAttribute("aria-controls", quote.id);
+          card.classList.remove("is-expanded");
+          toggle.textContent = "Read more";
+          toggle.setAttribute("aria-expanded", "false");
+          if (quote.scrollHeight <= quote.clientHeight + 1) {
+            toggle.classList.add("is-hidden");
+            return;
+          }
+          toggle.classList.remove("is-hidden");
+          toggle.addEventListener("click", function () {
+            var expanded = card.classList.toggle("is-expanded");
+            toggle.textContent = expanded ? "Read less" : "Read more";
+            toggle.setAttribute("aria-expanded", expanded ? "true" : "false");
+          });
+        });
+      }
+      function applyGalleryDepth() {
+        if (!galleryTrack || !galleryCards.length) return;
+        var viewport = galleryTrack.getBoundingClientRect();
+        var center = viewport.left + viewport.width / 2;
+        galleryCards.forEach(function (card) {
+          var rect = card.getBoundingClientRect();
+          var cardCenter = rect.left + rect.width / 2;
+          var delta = (cardCenter - center) / Math.max(1, viewport.width / 2);
+          var clamped = Math.max(-1, Math.min(1, delta));
+          var distance = Math.abs(clamped);
+          var rotateY = clamped * -20;
+          var depth = 34 - distance * 30;
+          var brightness = 1 - distance * 0.2;
+          card.style.transform = "translateZ(" + depth.toFixed(2) + "px) rotateY(" + rotateY.toFixed(2) + "deg)";
+          card.style.filter = "brightness(" + brightness.toFixed(3) + ")";
+        });
+      }
+      function initGalleryDepth() {
+        if (!galleryTrack || !galleryCards.length) return;
+        if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        var ticking = false;
+        function onScroll() {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(function () {
+            applyGalleryDepth();
+            ticking = false;
+          });
+        }
+        galleryTrack.addEventListener("scroll", onScroll, { passive: true });
+        window.addEventListener("resize", applyGalleryDepth);
+        requestAnimationFrame(applyGalleryDepth);
+        setTimeout(applyGalleryDepth, 80);
+      }
+      async function submitEnquiryForm(event) {
+        event.preventDefault();
+        if (!enquiryForm || !enquirySubmitBtn || !enquiryMessage) return;
+        var formData = new FormData(enquiryForm);
+        var payload = {
+          name: String(formData.get("name") || "").trim(),
+          phone: String(formData.get("phone") || "").trim(),
+          email: String(formData.get("email") || "").trim(),
+          trip: "Spiti Winter Expedition",
+          sourcePage: window.location.href,
+        };
+        enquiryMessage.style.color = "#33434d";
+        enquiryMessage.textContent = "Submitting...";
+        enquirySubmitBtn.disabled = true;
+        try {
+          var response = await fetch(leadApiUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(payload),
+          });
+          var result = await response.json();
+          if (!response.ok || !result.ok) {
+            throw new Error(result.error || "Submission failed");
+          }
+          enquiryMessage.style.color = "#1f7a39";
+          enquiryMessage.textContent = "Thanks! Our team will contact you soon.";
+          trackLead();
+          enquiryForm.reset();
+          setTimeout(closeEnquiryModal, 900);
+        } catch (error) {
+          enquiryMessage.style.color = "#b42318";
+          enquiryMessage.textContent = "Could not submit right now. Please try again.";
+          console.error("Enquiry submit failed:", error);
+        } finally {
+          enquirySubmitBtn.disabled = false;
+        }
+      }
+
+      openBtn.addEventListener("click", openEnquiryModal);
+      closeBtn.addEventListener("click", closeEnquiryModal);
+      openItineraryBtn.addEventListener("click", openItineraryModal);
+      closeItineraryBtn.addEventListener("click", closeItineraryModal);
+      if (enquiryForm) enquiryForm.addEventListener("submit", submitEnquiryForm);
+      if (callBtn) callBtn.addEventListener("click", trackLead);
+      if (chatBtn) chatBtn.addEventListener("click", trackLead);
+      modal.addEventListener("click", function (event) {
+        if (event.target === modal) closeEnquiryModal();
+      });
+      itineraryModal.addEventListener("click", function (event) {
+        if (event.target === itineraryModal) closeItineraryModal();
+      });
+      document.addEventListener("keydown", function (event) {
+        if (event.key !== "Escape") return;
+        if (itineraryModal.classList.contains("is-open")) closeItineraryModal();
+        if (modal.classList.contains("is-open")) closeEnquiryModal();
+      });
+      window.addEventListener("load", tryPlayVideo);
+      if (video) video.addEventListener("canplay", tryPlayVideo);
+      document.addEventListener("visibilitychange", function () {
+        if (document.visibilityState === "visible") tryPlayVideo();
+      });
+
+      /*
+       * FIX 10: initReviewToggles deferred until fonts are ready.
+       * Previously it ran synchronously before web fonts painted, so
+       * scrollHeight comparisons could incorrectly hide the toggle on
+       * reviews whose text only overflows once the real font is applied.
+       */
+      if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(initReviewToggles);
+      } else {
+        initReviewToggles();
+      }
+
+      initGalleryDepth();
+    })();
+  </script>
+</body>
+</html>

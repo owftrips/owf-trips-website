@@ -696,8 +696,9 @@ export default function WinterSpitiPage() {
         }
         .costing-table thead th {
           padding: 11px 14px;
-          font-size: 11px; font-weight: 700;
-          color: rgb(1,95,116); text-transform: uppercase;
+          font-family: 'Roboto', sans-serif;
+          font-size: 12px; font-weight: 500;
+          color: rgb(32,32,32); text-transform: none;
           letter-spacing: 0.5px; text-align: center;
         }
         .costing-table thead th:first-child { text-align: left; }
@@ -712,7 +713,14 @@ export default function WinterSpitiPage() {
           color: rgb(32,32,32); text-align: center;
         }
         .costing-table tbody td:first-child {
-          text-align: left; font-weight: 600; color: var(--ink);
+          background-color: rgb(224,250,255);
+          border-right: 2px solid rgb(255,255,255);
+          border-top-left-radius: 8px;
+          color: rgb(32,32,32);
+          font-size: 12px; font-weight: 500; font-style: normal;
+          letter-spacing: 0.035px; line-height: 15.6px;
+          padding: 5px; text-align: center;
+          text-transform: capitalize; vertical-align: middle;
         }
         .price-original {
           color: var(--muted); text-decoration: line-through;

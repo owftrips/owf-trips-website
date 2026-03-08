@@ -226,10 +226,16 @@ const BATCHES = [
   },
 ];
 
+const COSTING = [
+  { type: "Triple Sharing", original: "₹22,500/-", final: "₹19,900/-" },
+  { type: "Double Sharing", original: "₹24,900/-", final: "₹22,900/-" },
+];
+
 const NAV = [
   { id: "overview",  label: "Overview & Highlights" },
   { id: "itinerary", label: "Itinerary" },
   { id: "inclusions",label: "Inclusions" },
+  { id: "costing",   label: "Costing" },
   { id: "dates",     label: "Dates" },
   { id: "reviews",   label: "Reviews" },
   { id: "gallery",   label: "Gallery" },
@@ -671,6 +677,50 @@ export default function WinterSpitiPage() {
             margin-left: 0;
             padding: 0;
           }
+        }
+
+        /* ── Costing ── */
+        .costing-table-wrap {
+          border: 1px solid rgb(229,229,229);
+          border-radius: 10px;
+          overflow: hidden;
+          width: 100%;
+        }
+        .costing-table {
+          width: 100%; border-collapse: collapse;
+          font-family: 'Roboto', sans-serif;
+        }
+        .costing-table thead tr {
+          background: rgb(224,250,255);
+          border-bottom: 2px solid rgb(1,95,116);
+        }
+        .costing-table thead th {
+          padding: 11px 14px;
+          font-size: 11px; font-weight: 700;
+          color: rgb(1,95,116); text-transform: uppercase;
+          letter-spacing: 0.5px; text-align: center;
+        }
+        .costing-table thead th:first-child { text-align: left; }
+        .costing-table tbody tr {
+          border-bottom: 1px solid rgb(229,229,229);
+        }
+        .costing-table tbody tr:last-child { border-bottom: none; }
+        .costing-table tbody tr:hover { background: rgb(249,250,251); }
+        .costing-table tbody td {
+          padding: 13px 14px;
+          font-size: 13px; font-weight: 500;
+          color: rgb(32,32,32); text-align: center;
+        }
+        .costing-table tbody td:first-child {
+          text-align: left; font-weight: 600; color: var(--ink);
+        }
+        .price-original {
+          color: var(--muted); text-decoration: line-through;
+          font-size: 12px; font-weight: 400;
+        }
+        .price-final {
+          font-size: 15px; font-weight: 700;
+          color: rgb(1,95,116);
         }
 
         /* ── Available Dates ── */
@@ -1314,6 +1364,32 @@ export default function WinterSpitiPage() {
                 <button className="other-info-toggle" onClick={() => setShowTravelEssentials(v => !v)}>
                   {showTravelEssentials ? "Read Less" : "Read More"}
                 </button>
+              </div>
+            </section>
+
+            {/* ── Costing ── */}
+            <section id="costing" className="section">
+              <h2 className="section-title"><span className="section-bar" />Costing</h2>
+              <p style={{ fontSize: 13, color: "var(--muted)", margin: "-12px 0 16px" }}>Per person pricing based on room sharing</p>
+              <div className="costing-table-wrap">
+                <table className="costing-table">
+                  <thead>
+                    <tr>
+                      <th>Room Sharing</th>
+                      <th>Original Price<br/>per person</th>
+                      <th>Discounted Price<br/>per person</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {COSTING.map((row, i) => (
+                      <tr key={i}>
+                        <td>{row.type}</td>
+                        <td><span className="price-original">{row.original}</span></td>
+                        <td><span className="price-final">{row.final}</span></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
             </section>
 
